@@ -220,7 +220,7 @@ export default function HeroSection() {
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                     <div
-                      className={`w-10 sm:w-14 lg:w-16 h-10 sm:h-14 lg:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 ${
+                      className={`w-10 sm:w-14 lg:w-16 h-10 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 ${
                         isDarkMode ? "bg-red-600 group-hover:bg-red-500" : "bg-red-600 group-hover:bg-red-500"
                       } shadow-lg`}
                     >
