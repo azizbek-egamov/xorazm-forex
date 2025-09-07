@@ -191,20 +191,39 @@ export default function HeroSection() {
 
             {/* Enhanced Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 items-center justify-center lg:justify-start animate-fade-in delay-1400">
-              <Button
+              <div
                 onClick={() => scrollToSection("courses")}
-                size="lg"
-                className={`group w-full sm:w-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-6 text-sm sm:text-lg lg:text-xl font-bold transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:-translate-y-1 ${
-                  isDarkMode
-                    ? "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 shadow-lg shadow-red-900/30 hover:shadow-red-900/50"
-                    : "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 hover:shadow-red-500/30"
-                } text-white rounded-xl sm:rounded-2xl animate-[pulse_3s_ease-in-out_infinite] hover:animate-none relative overflow-hidden`}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault()
+                    scrollToSection("courses")
+                  }
+                }}
+                style={{
+                  background: "linear-gradient(to right, #dc2626, #ef4444)",
+                  color: "#ffffff",
+                }}
+                className="group w-full sm:w-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-6 text-sm sm:text-lg lg:text-xl font-bold transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:-translate-y-1 text-white rounded-xl sm:rounded-2xl animate-[pulse_3s_ease-in-out_infinite] hover:animate-none relative overflow-hidden cursor-pointer flex items-center justify-center"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "linear-gradient(to right, #ef4444, #f87171)"
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "linear-gradient(to right, #dc2626, #ef4444)"
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                <Zap className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 mr-2 lg:mr-3 group-hover:animate-spin" />
-                KURSGA YOZILISH
-                <ArrowRight className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 ml-2 lg:ml-3 group-hover:translate-x-1 transition-transform duration-300" />
-              </Button>
+                <Zap
+                  className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 mr-2 lg:mr-3 group-hover:animate-spin"
+                  style={{ color: "#ffffff" }}
+                />
+                <span style={{ color: "#ffffff" }}>KURSGA YOZILISH</span>
+                <ArrowRight
+                  className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 ml-2 lg:ml-3 group-hover:translate-x-1 transition-transform duration-300"
+                  style={{ color: "#ffffff" }}
+                />
+              </div>
 
               {/* Enhanced Video Button */}
               <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
@@ -225,8 +244,8 @@ export default function HeroSection() {
                         : "0 4px 24px 0 rgba(255, 0, 0, 0.07)",
                     }}
                   >
-                    <span className="flex items-center justify-center w-10 h-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
-                      <Play className="w-6 h-6 text-bold tracking-wide drop-shadow-sm" fill="currentColor" />
+                    <span className="flex items-center justify-center w-10 h-10 rounded-full from-red-500 via-red-400 to-yellow-400 shadow-md mr-2 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+                      <Play className="w-6 h-6 text-white" fill="currentColor" />
                     </span>
                     <span className="font-bold tracking-wide drop-shadow-sm">TREYDING NIMA?</span>
                   </Button>
