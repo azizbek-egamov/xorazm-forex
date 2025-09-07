@@ -74,6 +74,7 @@ export default function CoursesSection() {
       subtitle: "START kursining analogi",
       description: "Onlayn formatda o'qish imkoniyati bilan maxsus aksiya taklifimiz.",
       price: "100$",
+      originalPrice: "200$",
       popular: false,
       features: [
         "100$ deposit 🔥",
@@ -84,14 +85,14 @@ export default function CoursesSection() {
       ],
       icon: Zap,
       color: "from-blue-600 to-blue-500",
+      hasLimitedSpots: true,
     },
     {
       id: "OFFLINE_PROMO",
       name: "AKSIYA OFFLAYN",
       subtitle: "START kursining analogi",
       description: "Urganch ofisimizda bevosita o'qish imkoniyati.",
-      price: "100$",
-      originalPrice: "200$",
+      price: "200$",
       popular: false,
       features: [
         "Deposit + 25$ deposit 🔥",
@@ -102,7 +103,6 @@ export default function CoursesSection() {
       ],
       icon: Users,
       color: "from-purple-600 to-purple-500",
-      hasLimitedSpots: true,
     },
   ]
 
