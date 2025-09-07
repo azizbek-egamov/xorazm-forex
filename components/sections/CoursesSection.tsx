@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import { useTheme } from "@/components/providers/ThemeProvider"
 import { Check, Star, Zap, Crown, Gift, Clock, Users, Award, ArrowRight } from "lucide-react"
 import PurchaseModal from "@/components/modals/PurchaseModal"
@@ -72,7 +71,7 @@ export default function CoursesSection() {
     {
       id: "ONLINE_PROMO",
       name: "AKSIYA ONLAYN",
-      subtitle: "Onlayn ta'lim",
+      subtitle: "START kursining analogi",
       description: "Onlayn formatda o'qish imkoniyati bilan maxsus aksiya taklifimiz.",
       price: "100$",
       popular: false,
@@ -89,9 +88,10 @@ export default function CoursesSection() {
     {
       id: "OFFLINE_PROMO",
       name: "AKSIYA OFFLAYN",
-      subtitle: "Urganch ofisida",
-      description: "Urganch ofisimizda bevosita o'qish imkoniyati bilan maxsus aksiya.",
-      price: "200$",
+      subtitle: "START kursining analogi",
+      description: "Urganch ofisimizda bevosita o'qish imkoniyati.",
+      price: "100$",
+      originalPrice: "200$",
       popular: false,
       features: [
         "Deposit + 25$ deposit 🔥",
@@ -102,6 +102,7 @@ export default function CoursesSection() {
       ],
       icon: Users,
       color: "from-purple-600 to-purple-500",
+      hasLimitedSpots: true,
     },
   ]
 
@@ -147,9 +148,7 @@ export default function CoursesSection() {
 
           <h2
             className={`text-3xl sm:text-4xl lg:text-6xl font-black mb-6 transition-all duration-200 ${
-              isDarkMode
-                ? "bg-gradient-to-r from-gray-100 via-white to-gray-200 bg-clip-text text-transparent"
-                : "text-gray-900"
+              isDarkMode ? "text-white" : "text-gray-900"
             }`}
           >
             O'quv dasturlarimiz
@@ -198,6 +197,24 @@ export default function CoursesSection() {
                       </div>
                     )}
 
+                    {/* Limited Spots Animation */}
+                    {course.hasLimitedSpots && (
+                      <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                        <div
+                          className={`px-4 py-2 rounded-full text-xs font-bold animate-pulse ${
+                            isDarkMode
+                              ? "bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg shadow-orange-900/40"
+                              : "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
+                          }`}
+                        >
+                          <div className="flex items-center space-x-1">
+                            <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
+                            <span>Aksiyada faqat 7 kishi uchun joy qoldi</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
                     {/* Course Header - Fixed height */}
                     <div className="text-center mb-6 flex-shrink-0">
                       <div
@@ -220,11 +237,26 @@ export default function CoursesSection() {
 
                       {/* Pricing - Fixed height */}
                       <div className="mb-6 min-h-[4rem] flex flex-col justify-center">
-                        <div
-                          className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}
-                        >
-                          {course.price}
-                        </div>
+                        {course.originalPrice ? (
+                          <div className="space-y-1">
+                            <div
+                              className={`text-lg line-through opacity-60 ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}
+                            >
+                              {course.originalPrice}
+                            </div>
+                            <div
+                              className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}
+                            >
+                              {course.price}
+                            </div>
+                          </div>
+                        ) : (
+                          <div
+                            className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}
+                          >
+                            {course.price}
+                          </div>
+                        )}
                       </div>
                     </div>
 
@@ -243,32 +275,53 @@ export default function CoursesSection() {
 
                       {/* CTA Button - Always at bottom */}
                       <div className="mt-auto">
-                        <Button
+                        <div
                           onClick={(e) => {
                             e.stopPropagation()
                             handleCourseEnrollment(course)
                           }}
-                          className={`w-full py-4 font-bold rounded-2xl transition-all duration-200 hover:scale-105 ${
-                            course.popular
-                              ? "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white shadow-lg"
-                              : isDarkMode
-                                ? "bg-gray-700 hover:bg-gray-600 text-white border border-gray-600"
-                                : "bg-gray-900 hover:bg-gray-800 text-white"
-                          }`}
+                          role="button"
+                          tabIndex={0}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault()
+                              handleCourseEnrollment(course)
+                            }
+                          }}
+                          style={{
+                            backgroundColor: course.popular ? "#dc2626" : "#1f2937",
+                            color: "#ffffff",
+                            background: course.popular ? "linear-gradient(to right, #dc2626, #ef4444)" : "#1f2937",
+                          }}
+                          className="w-full py-4 font-bold rounded-2xl transition-all duration-200 hover:scale-105 flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+                          onMouseEnter={(e) => {
+                            if (course.popular) {
+                              e.currentTarget.style.background = "linear-gradient(to right, #ef4444, #f87171)"
+                            } else {
+                              e.currentTarget.style.backgroundColor = "#374151"
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            if (course.popular) {
+                              e.currentTarget.style.background = "linear-gradient(to right, #dc2626, #ef4444)"
+                            } else {
+                              e.currentTarget.style.backgroundColor = "#1f2937"
+                            }
+                          }}
                         >
                           {course.popular ? (
                             <>
-                              <Zap className="w-4 h-4 mr-2" />
-                              <span className="text-white">HOZIROQ YOZILISH</span>
-                              <ArrowRight className="w-4 h-4 ml-2" />
+                              <Zap className="w-4 h-4" style={{ color: "#ffffff" }} />
+                              <span style={{ color: "#ffffff" }}>HOZIROQ YOZILISH</span>
+                              <ArrowRight className="w-4 h-4" style={{ color: "#ffffff" }} />
                             </>
                           ) : (
                             <>
-                              <span className="text-white">KURSGA YOZILISH</span>
-                              <ArrowRight className="w-4 h-4 ml-2" />
+                              <span style={{ color: "#ffffff" }}>KURSGA YOZILISH</span>
+                              <ArrowRight className="w-4 h-4" style={{ color: "#ffffff" }} />
                             </>
                           )}
-                        </Button>
+                        </div>
 
                         {/* Note */}
                         {course.note && (
@@ -359,32 +412,53 @@ export default function CoursesSection() {
 
                       {/* CTA Button - Always at bottom */}
                       <div className="mt-auto">
-                        <Button
+                        <div
                           onClick={(e) => {
                             e.stopPropagation()
                             handleCourseEnrollment(course)
                           }}
-                          className={`w-full py-4 font-bold rounded-2xl transition-all duration-200 hover:scale-105 ${
-                            course.popular
-                              ? "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white shadow-lg"
-                              : isDarkMode
-                                ? "bg-gray-700 hover:bg-gray-600 text-white border border-gray-600"
-                                : "bg-gray-900 hover:bg-gray-800 text-white"
-                          }`}
+                          role="button"
+                          tabIndex={0}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault()
+                              handleCourseEnrollment(course)
+                            }
+                          }}
+                          style={{
+                            backgroundColor: course.popular ? "#dc2626" : "#1f2937",
+                            color: "#ffffff",
+                            background: course.popular ? "linear-gradient(to right, #dc2626, #ef4444)" : "#1f2937",
+                          }}
+                          className="w-full py-4 font-bold rounded-2xl transition-all duration-200 hover:scale-105 flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+                          onMouseEnter={(e) => {
+                            if (course.popular) {
+                              e.currentTarget.style.background = "linear-gradient(to right, #ef4444, #f87171)"
+                            } else {
+                              e.currentTarget.style.backgroundColor = "#374151"
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            if (course.popular) {
+                              e.currentTarget.style.background = "linear-gradient(to right, #dc2626, #ef4444)"
+                            } else {
+                              e.currentTarget.style.backgroundColor = "#1f2937"
+                            }
+                          }}
                         >
                           {course.popular ? (
                             <>
-                              <Zap className="w-4 h-4 mr-2" />
-                              <span className="text-white">HOZIROQ YOZILISH</span>
-                              <ArrowRight className="w-4 h-4 ml-2" />
+                              <Zap className="w-4 h-4" style={{ color: "#ffffff" }} />
+                              <span style={{ color: "#ffffff" }}>HOZIROQ YOZILISH</span>
+                              <ArrowRight className="w-4 h-4" style={{ color: "#ffffff" }} />
                             </>
                           ) : (
                             <>
-                              <span className="text-white">KURSGA YOZILISH</span>
-                              <ArrowRight className="w-4 h-4 ml-2" />
+                              <span style={{ color: "#ffffff" }}>KURSGA YOZILISH</span>
+                              <ArrowRight className="w-4 h-4" style={{ color: "#ffffff" }} />
                             </>
                           )}
-                        </Button>
+                        </div>
 
                         {/* Note */}
                         {course.note && (
