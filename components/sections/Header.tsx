@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 import { useTheme } from "@/components/providers/ThemeProvider"
 import { Phone, GraduationCap, Users, Shield, MessageCircle, Sun, Moon, Menu, X, Zap, ArrowRight } from "lucide-react"
 
@@ -129,21 +128,43 @@ export default function Header() {
 
           {/* Enhanced CTA Button */}
           <div className="hidden sm:block">
-            <Button
+            <div
               onClick={() => scrollToSection("courses")}
-              className={`group flex items-center space-x-1 sm:space-x-2 px-3 sm:px-5 py-2 sm:py-2.5 font-bold rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-xs sm:text-sm shadow-lg hover:shadow-xl relative overflow-hidden ${
-                isDarkMode
-                  ? "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 shadow-red-900/30"
-                  : "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400"
-              } text-white`}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault()
+                  scrollToSection("courses")
+                }
+              }}
+              style={{
+                background: "linear-gradient(to right, #dc2626, #ef4444)",
+                color: "#ffffff",
+              }}
+              className="group flex items-center space-x-1 sm:space-x-2 px-3 sm:px-5 py-2 sm:py-2.5 font-bold rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-xs sm:text-sm shadow-lg hover:shadow-xl relative overflow-hidden text-white cursor-pointer"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "linear-gradient(to right, #ef4444, #f87171)"
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "linear-gradient(to right, #dc2626, #ef4444)"
+              }}
             >
               {/* Shimmer effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 
-              <Zap className="w-3 sm:w-4 h-3 sm:h-4 group-hover:animate-spin relative z-10" />
-              <span className="relative z-10">Kursga yozilish</span>
-              <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300 relative z-10" />
-            </Button>
+              <Zap
+                className="w-3 sm:w-4 h-3 sm:h-4 group-hover:animate-spin relative z-10"
+                style={{ color: "#ffffff" }}
+              />
+              <span className="relative z-10" style={{ color: "#ffffff" }}>
+                Kursga yozilish
+              </span>
+              <ArrowRight
+                className="w-3 sm:w-4 h-3 sm:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300 relative z-10"
+                style={{ color: "#ffffff" }}
+              />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -226,19 +247,35 @@ export default function Header() {
               <Phone className="w-4 sm:w-5 h-4 sm:h-5" />
               <span>+998 (50) 001 29 59</span>
             </a>
-            <Button
+            <div
               onClick={() => scrollToSection("courses")}
-              className={`w-full py-2 sm:py-3 font-bold rounded-xl transition-all duration-200 text-sm sm:text-base group relative overflow-hidden ${
-                isDarkMode
-                  ? "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 shadow-lg shadow-red-900/30"
-                  : "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400"
-              } text-white`}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault()
+                  scrollToSection("courses")
+                }
+              }}
+              style={{
+                background: "linear-gradient(to right, #dc2626, #ef4444)",
+                color: "#ffffff",
+              }}
+              className="w-full py-2 sm:py-3 font-bold rounded-xl transition-all duration-200 text-sm sm:text-base group relative overflow-hidden text-white cursor-pointer flex items-center justify-center"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "linear-gradient(to right, #ef4444, #f87171)"
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "linear-gradient(to right, #dc2626, #ef4444)"
+              }}
             >
               {/* Shimmer effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 
-              <span className="relative z-10">Kursga yozilish →</span>
-            </Button>
+              <span className="relative z-10" style={{ color: "#ffffff" }}>
+                Kursga yozilish →
+              </span>
+            </div>
           </div>
         </nav>
       </div>
