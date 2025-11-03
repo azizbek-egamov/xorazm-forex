@@ -351,7 +351,7 @@ export default function ContactSection() {
             {/* Enhanced Contact Details */}
             <div className="space-y-6">
               <a
-                href="tel:+998500012959"
+                href="tel:+998880223366"
                 className={`group flex items-center space-x-6 p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${
                   isDarkMode ? "bg-gray-900 hover:bg-gray-800" : "bg-gray-800 hover:bg-gray-700"
                 } hover:shadow-lg`}
@@ -362,7 +362,7 @@ export default function ContactSection() {
                 <div>
                   <p className="text-sm text-gray-200 mb-1">Telefon raqam</p>
                   <p className="text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
-                    +998 (50) 001-29-59
+                    +998 88 022 33 66
                   </p>
                 </div>
               </a>
