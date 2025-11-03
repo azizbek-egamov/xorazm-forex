@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useTheme } from "@/components/providers/ThemeProvider"
-import { Check, Star, Zap, Crown, Gift, Clock, Users, Award, ArrowRight } from "lucide-react"
+import { Check, Star, Zap, Crown, Gift, Clock, Award, ArrowRight } from "lucide-react"
 import PurchaseModal from "@/components/modals/PurchaseModal"
 
 export default function CoursesSection() {
@@ -17,25 +17,44 @@ export default function CoursesSection() {
       name: "START",
       subtitle: "Boshlang'ich kurs",
       description: "0 dan o'rgatiladigan boshlang'ich treyding kurslarimiz, 5-10 kishilik guruhlarda bo'lib o'tadi.",
-      price: "6 000 000 UZS",
+      price: "3 000 000 UZS",
+      originalPrice: "6 000 000 UZS",
       popular: false,
       features: [
-        "5000$ prop 🔥",
+        "500$ prop sovg'a 🔥",
         "Indikatorlar 1 ta 🔥",
         "VIP guruhimizga a'zolik ✅",
-        "Strategiyalar 5ta 🔥",
+        "Strategiyalar 3ta 🔥",
         "Boshlang'ich bilimlar",
         "Guruh darslar",
       ],
       icon: Award,
       color: "from-green-600 to-green-500",
     },
+        {
+      id: "ZETA",
+      name: "ZETA",
+      subtitle: "Kombinatsiya",
+      description: "25 kun START kurslari + 5 kun PRO kurslari va treyding klubga yo'llanma!",
+      price: "10 000 000 UZS",
+      popular: false,
+      features: [
+        "1000$ prop sovg'a 🔥",
+        "Robot sovg'a 🤖",
+        "Strategiyalar 5ta 🔥",
+        "Shaxsiy menedjer ✅",
+        "Kombinatsiyalangan kurs",
+        "Klub a'zoligi",
+      ],
+      icon: Gift,
+      color: "from-yellow-600 to-yellow-500",
+    },
     {
       id: "PRO",
       name: "PRO",
       subtitle: "Eng mashhur",
       description: "Katta ustoz, Ko'p yillik tajribaga ega mentorimiz o'z bilimlarini beradigan, 1.5 oylik kursimiz.",
-      price: "37 000 000 UZS",
+      price: "25 000 000 UZS",
       popular: true,
       features: [
         "FULL Treyder komplekti sovg'a 🎁",
@@ -51,30 +70,11 @@ export default function CoursesSection() {
       color: "from-red-600 to-red-500",
     },
     {
-      id: "ZETA",
-      name: "ZETA",
-      subtitle: "Kombinatsiya",
-      description: "25 kun START kurslari + 5 kun PRO kurslari va treyding klubga yo'llanma!",
-      price: "10 000 000 UZS",
-      popular: false,
-      features: [
-        "10 000$ prop 🔥",
-        "Robot + 100$ deposit 🔥",
-        "25$ sovg'a 🎁",
-        "Strategiyalar 3ta 🔥",
-        "Kombinatsiyalangan kurs",
-        "Klub a'zoligi",
-      ],
-      icon: Gift,
-      color: "from-yellow-600 to-yellow-500",
-    },
-    {
       id: "ONLINE_PROMO",
       name: "AKSIYA ONLAYN",
       subtitle: "START kursining analogi",
       description: "Onlayn formatda o'qish imkoniyati bilan maxsus aksiya taklifimiz.",
-      price: "100$",
-      originalPrice: "200$",
+      price: "2 500 000 UZS",
       popular: false,
       features: [
         "100$ deposit 🔥",
@@ -86,23 +86,6 @@ export default function CoursesSection() {
       icon: Zap,
       color: "from-blue-600 to-blue-500",
       hasLimitedSpots: true,
-    },
-    {
-      id: "OFFLINE_PROMO",
-      name: "AKSIYA OFFLAYN",
-      subtitle: "START kursining analogi",
-      description: "Urganch ofisimizda bevosita o'qish imkoniyati.",
-      price: "200$",
-      popular: false,
-      features: [
-        "Deposit + 25$ deposit 🔥",
-        "2500$ prop sovg'a 🎁",
-        "Urganch ofisida darslar 🏢",
-        "Bevosita muloqot ✅",
-        "VIP guruhga a'zolik ✅",
-      ],
-      icon: Users,
-      color: "from-purple-600 to-purple-500",
     },
   ]
 
@@ -168,9 +151,9 @@ export default function CoursesSection() {
         <div className="space-y-8">
           {/* First Row - Promotion Courses */}
           <div className="flex justify-center">
-            <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl">
+            <div className="w-full max-w-md">
               {courses
-                .filter((course) => course.id === "ONLINE_PROMO" || course.id === "OFFLINE_PROMO")
+                .filter((course) => course.id === "ONLINE_PROMO")
                 .map((course) => (
                   <div
                     key={course.id}
@@ -185,18 +168,6 @@ export default function CoursesSection() {
                     }`}
                     onClick={() => setSelectedCourse(course.id)}
                   >
-                    {/* Popular Badge */}
-                    {course.popular && (
-                      <div
-                        className={`absolute -top-4 left-1/2 transform -translate-x-1/2 px-6 py-2 rounded-2xl text-xs font-bold ${
-                          isDarkMode ? "bg-red-600 text-white shadow-lg shadow-red-900/40" : "bg-red-600 text-white"
-                        } animate-pulse`}
-                      >
-                        <Star className="w-4 h-4 inline mr-1" />
-                        ENG MASHHUR
-                      </div>
-                    )}
-
                     {/* Limited Spots Animation */}
                     {course.hasLimitedSpots && (
                       <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
@@ -340,7 +311,7 @@ export default function CoursesSection() {
           <div className="flex justify-center">
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 max-w-6xl">
               {courses
-                .filter((course) => course.id !== "ONLINE_PROMO" && course.id !== "OFFLINE_PROMO")
+                .filter((course) => course.id !== "ONLINE_PROMO")
                 .map((course) => (
                   <div
                     key={course.id}
@@ -389,11 +360,26 @@ export default function CoursesSection() {
 
                       {/* Pricing - Fixed height */}
                       <div className="mb-6 min-h-[4rem] flex flex-col justify-center">
-                        <div
-                          className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}
-                        >
-                          {course.price}
-                        </div>
+                        {course.originalPrice ? (
+                          <div className="space-y-1">
+                            <div
+                              className={`text-lg line-through opacity-60 ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}
+                            >
+                              {course.originalPrice}
+                            </div>
+                            <div
+                              className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}
+                            >
+                              {course.price}
+                            </div>
+                          </div>
+                        ) : (
+                          <div
+                            className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}
+                          >
+                            {course.price}
+                          </div>
+                        )}
                       </div>
                     </div>
 
