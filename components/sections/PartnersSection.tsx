@@ -8,30 +8,26 @@ export default function PartnersSection() {
   const { isDarkMode } = useTheme()
 
   const partners = [
-    { name: "Analytics", logo: "/images/partners/analytics.png", bg: "bg-gray-800" },
-    { name: "Hamkorbank", logo: "/images/partners/hamkorbank.png", bg: "bg-white" },
-    { name: "Kapitalbank", logo: "/images/partners/kapitalbank.png", bg: "bg-yellow-400" },
-    { name: "FundedNext", logo: "/images/partners/fundednext.jpeg", bg: "bg-white" },
-    { name: "FXIFY", logo: "/images/partners/fxify.png", bg: "bg-black" },
-    { name: "Travel", logo: "/images/partners/travel.png", bg: "bg-green-500" },
-    { name: "Xorazm FC", logo: "/images/partners/xorazm-fc.jpeg", bg: "bg-black" },
-    { name: "Western Union", logo: "/images/partners/western-union.png", bg: "bg-white" },
-    { name: "Yandex", logo: "/images/partners/yandex.png", bg: "bg-white" },
+    { name: "XM", logo: "/images/partners/xm-logo-bn250x250.png", bg: "bg-black" },
+    { name: "Forex4You", logo: "/images/partners/fx4u.jpeg", bg: "bg-white" },
+    { name: "FreshForex", logo: "/images/partners/freshforex.png", bg: "bg-white" },
+    { name: "AMarkets", logo: "/images/partners/amark.png", bg: "bg-white" },
+    { name: "ApexBank", logo: "/images/partners/apexbank.jpeg", bg: "bg-white" },
+    { name: "TCrypto", logo: "/images/partners/tcrypto.png", bg: "bg-gray-900" },
+    { name: "Zaza Travel", logo: "/images/partners/travel.png", bg: "bg-white" },
   ]
 
   return (
     <section
-      className={`py-16 lg:py-24 px-4 sm:px-6 lg:px-12 overflow-hidden ${
-        isDarkMode ? "bg-gray-900 text-white" : "bg-gray-50"
-      }`}
+      className={`py-16 lg:py-24 px-4 sm:px-6 lg:px-12 overflow-hidden ${isDarkMode ? "bg-gray-900 text-white" : "bg-gray-50"
+        }`}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-20">
           <h2
-            className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ${
-              isDarkMode ? "text-gray-100" : "text-gray-900"
-            }`}
+            className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ${isDarkMode ? "text-gray-100" : "text-gray-900"
+              }`}
           >
             Hamkorlarimiz
           </h2>
@@ -43,9 +39,8 @@ export default function PartnersSection() {
         {/* Partners Carousel */}
         <div className="relative mb-16">
           <div
-            className={`overflow-hidden rounded-2xl shadow-lg border ${
-              isDarkMode ? "border-gray-800 bg-gray-950" : "border-gray-200 bg-white"
-            }`}
+            className={`overflow-hidden rounded-2xl shadow-lg border ${isDarkMode ? "border-gray-800 bg-gray-950" : "border-gray-200 bg-white"
+              }`}
           >
             <div className="flex animate-scroll-left hover:pause-animation">
               {/* First set */}
@@ -64,9 +59,8 @@ export default function PartnersSection() {
                       />
                     </div>
                     <p
-                      className={`text-center mt-3 text-sm font-semibold ${
-                        isDarkMode ? "text-gray-100" : "text-gray-700"
-                      }`}
+                      className={`text-center mt-3 text-sm font-semibold ${isDarkMode ? "text-gray-100" : "text-gray-700"
+                        }`}
                     >
                       {partner.name}
                     </p>
@@ -90,9 +84,8 @@ export default function PartnersSection() {
                       />
                     </div>
                     <p
-                      className={`text-center mt-3 text-sm font-semibold ${
-                        isDarkMode ? "text-gray-100" : "text-gray-700"
-                      }`}
+                      className={`text-center mt-3 text-sm font-semibold ${isDarkMode ? "text-gray-100" : "text-gray-700"
+                        }`}
                     >
                       {partner.name}
                     </p>
@@ -104,27 +97,24 @@ export default function PartnersSection() {
 
           {/* Gradient overlays */}
           <div
-            className={`absolute top-0 left-0 w-20 h-full bg-gradient-to-r pointer-events-none z-10 ${
-              isDarkMode ? "from-gray-900 to-transparent" : "from-gray-50 to-transparent"
-            }`}
+            className={`absolute top-0 left-0 w-20 h-full bg-gradient-to-r pointer-events-none z-10 ${isDarkMode ? "from-gray-900 to-transparent" : "from-gray-50 to-transparent"
+              }`}
           ></div>
           <div
-            className={`absolute top-0 right-0 w-20 h-full bg-gradient-to-l pointer-events-none z-10 ${
-              isDarkMode ? "from-gray-900 to-transparent" : "from-gray-50 to-transparent"
-            }`}
+            className={`absolute top-0 right-0 w-20 h-full bg-gradient-to-l pointer-events-none z-10 ${isDarkMode ? "from-gray-900 to-transparent" : "from-gray-50 to-transparent"
+              }`}
           ></div>
         </div>
 
         {/* Partnership Benefits - Enhanced with equal heights */}
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
           <div
-            className={`h-full flex flex-col text-center p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${
-              isDarkMode ? "bg-gray-800 text-white" : "bg-white"
-            }`}
+            className={`h-full flex flex-col text-center p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${isDarkMode ? "bg-gray-800 text-white" : "bg-white"
+              }`}
           >
             {/* Icon and Title - Fixed height */}
             <div className="flex-shrink-0 mb-6">
-              <div className="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? "text-gray-100" : "text-gray-900"}`}>
@@ -141,9 +131,8 @@ export default function PartnersSection() {
           </div>
 
           <div
-            className={`h-full flex flex-col text-center p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${
-              isDarkMode ? "bg-gray-800 text-white" : "bg-white"
-            }`}
+            className={`h-full flex flex-col text-center p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${isDarkMode ? "bg-gray-800 text-white" : "bg-white"
+              }`}
           >
             {/* Icon and Title - Fixed height */}
             <div className="flex-shrink-0 mb-6">
@@ -164,9 +153,8 @@ export default function PartnersSection() {
           </div>
 
           <div
-            className={`h-full flex flex-col text-center p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${
-              isDarkMode ? "bg-gray-800 text-white" : "bg-white"
-            }`}
+            className={`h-full flex flex-col text-center p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${isDarkMode ? "bg-gray-800 text-white" : "bg-white"
+              }`}
           >
             {/* Icon and Title - Fixed height */}
             <div className="flex-shrink-0 mb-6">

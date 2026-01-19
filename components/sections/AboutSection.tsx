@@ -12,7 +12,7 @@ export default function AboutSection() {
       title: "Bilim sifati kafolatlanadi!",
       description:
         "Bizda aniq metodikalarga asoslangan, soha uchun barcha kerakli bo'ladigan bilimlarning barchasi darslarimizdagi o'rgatib boriladi - sohani to'liq o'rganasiz!",
-      color: "bg-red-600",
+      color: "bg-teal-600",
     },
     {
       icon: Target,
@@ -51,47 +51,43 @@ export default function AboutSection() {
   return (
     <section
       id="about-us"
-      className={`py-16 lg:py-24 px-4 sm:px-6 lg:px-12 relative overflow-hidden ${
-        isDarkMode
-          ? "bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"
-          : "bg-gradient-to-br from-gray-50 via-white to-gray-50"
-      }`}
+      className={`py-16 lg:py-24 px-4 sm:px-6 lg:px-12 relative overflow-hidden ${isDarkMode
+        ? "bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"
+        : "bg-gradient-to-br from-gray-50 via-white to-gray-50"
+        }`}
     >
       {/* Background Effects */}
       {isDarkMode && (
         <>
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-red-900/8 to-red-800/8 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-gray-900/8 to-red-900/8 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-teal-900/8 to-teal-800/8 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-gray-900/8 to-teal-900/8 rounded-full blur-3xl"></div>
         </>
       )}
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-20">
-          <div className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 font-semibold text-sm mb-6">
+          <div className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 font-semibold text-sm mb-6">
             <Award className="w-4 h-4" />
             <span>2006-YILDAN BUYON FAOLIYAT</span>
           </div>
 
           <h2
-            className={`text-3xl sm:text-4xl lg:text-6xl font-black mb-6 transition-all duration-200 ${
-              isDarkMode
-                ? "bg-gradient-to-r from-gray-100 via-white to-gray-200 bg-clip-text text-transparent"
-                : "text-gray-900"
-            }`}
+            className={`text-3xl sm:text-4xl lg:text-6xl font-black mb-6 transition-all duration-200 ${isDarkMode
+              ? "bg-gradient-to-r from-gray-100 via-white to-gray-200 bg-clip-text text-transparent"
+              : "text-gray-900"
+              }`}
           >
             Nega bizni tanlashadi?
           </h2>
 
           <p
-            className={`text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto ${
-              isDarkMode ? "text-gray-100" : "text-gray-600"
-            }`}
+            className={`text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto ${isDarkMode ? "text-gray-100" : "text-gray-600"
+              }`}
           >
             <span
-              className={`font-bold text-2xl ${
-                isDarkMode ? "bg-gradient-to-r from-red-300 to-red-400 bg-clip-text text-transparent" : "text-red-600"
-              }`}
+              className={`font-bold text-2xl ${isDarkMode ? "bg-gradient-to-r from-teal-300 to-teal-400 bg-clip-text text-transparent" : "text-teal-600"
+                }`}
             >
               18 yillik tajriba
             </span>{" "}
@@ -104,11 +100,10 @@ export default function AboutSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group h-full flex flex-col p-6 lg:p-8 rounded-3xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 ${
-                isDarkMode
-                  ? "bg-gray-900/95 backdrop-blur-xl border border-gray-800/50 shadow-2xl shadow-black/20 hover:shadow-red-900/20"
-                  : "bg-white border border-gray-100 shadow-lg hover:shadow-2xl"
-              }`}
+              className={`group h-full flex flex-col p-6 lg:p-8 rounded-3xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 ${isDarkMode
+                ? "bg-gray-900/95 backdrop-blur-xl border border-gray-800/50 shadow-2xl shadow-black/20 hover:shadow-teal-900/20"
+                : "bg-white border border-gray-100 shadow-lg hover:shadow-2xl"
+                }`}
             >
               {/* Icon and Title - Fixed height */}
               <div className="mb-6 flex-shrink-0">
@@ -136,7 +131,7 @@ export default function AboutSection() {
         <div className="mt-16 lg:mt-20">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             <div className="text-center">
-              <div className="text-4xl lg:text-6xl font-black text-red-500 mb-2">18</div>
+              <div className="text-4xl lg:text-6xl font-black text-teal-500 mb-2">18</div>
               <div className={`text-sm lg:text-base font-semibold ${isDarkMode ? "text-gray-100" : "text-gray-700"}`}>
                 Yillik tajriba
               </div>

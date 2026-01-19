@@ -17,8 +17,7 @@ export default function CoursesSection() {
       name: "START",
       subtitle: "Boshlang'ich kurs",
       description: "0 dan o'rgatiladigan boshlang'ich treyding kurslarimiz, 5-10 kishilik guruhlarda bo'lib o'tadi.",
-      price: "3 000 000 UZS",
-      originalPrice: "6 000 000 UZS",
+      price: "6 000 000 UZS",
       popular: false,
       features: [
         "500$ prop sovg'a 🔥",
@@ -31,12 +30,12 @@ export default function CoursesSection() {
       icon: Award,
       color: "from-green-600 to-green-500",
     },
-        {
+    {
       id: "ZETA",
       name: "ZETA",
       subtitle: "Kombinatsiya",
       description: "25 kun START kurslari + 5 kun PRO kurslari va treyding klubga yo'llanma!",
-      price: "10 000 000 UZS",
+      price: "15 000 000 UZS",
       popular: false,
       features: [
         "1000$ prop sovg'a 🔥",
@@ -54,7 +53,7 @@ export default function CoursesSection() {
       name: "PRO",
       subtitle: "Eng mashhur",
       description: "Katta ustoz, Ko'p yillik tajribaga ega mentorimiz o'z bilimlarini beradigan, 1.5 oylik kursimiz.",
-      price: "25 000 000 UZS",
+      price: "37 000 000 UZS",
       popular: true,
       features: [
         "FULL Treyder komplekti sovg'a 🎁",
@@ -67,26 +66,27 @@ export default function CoursesSection() {
         "Real savdo tajribasi",
       ],
       icon: Crown,
-      color: "from-red-600 to-red-500",
+      color: "from-teal-600 to-teal-500",
     },
-    {
-      id: "ONLINE_PROMO",
-      name: "AKSIYA ONLAYN",
-      subtitle: "START kursining analogi",
-      description: "Onlayn formatda o'qish imkoniyati bilan maxsus aksiya taklifimiz.",
-      price: "2 500 000 UZS",
-      popular: false,
-      features: [
-        "100$ deposit 🔥",
-        "25$ deposit qo'shimcha 🔥",
-        "2500$ prop sovg'a 🎁",
-        "Onlayn darslar ✅",
-        "VIP guruhga a'zolik ✅",
-      ],
-      icon: Zap,
-      color: "from-blue-600 to-blue-500",
-      hasLimitedSpots: true,
-    },
+    // VAQTINCHA KOMENTDA
+    // {
+    //   id: "ONLINE_PROMO",
+    //   name: "AKSIYA ONLAYN",
+    //   subtitle: "START kursining analogi",
+    //   description: "Onlayn formatda o'qish imkoniyati bilan maxsus aksiya taklifimiz.",
+    //   price: "2 500 000 UZS",
+    //   popular: false,
+    //   features: [
+    //     "100$ deposit 🔥",
+    //     "25$ deposit qo'shimcha 🔥",
+    //     "2500$ prop sovg'a 🎁",
+    //     "Onlayn darslar ✅",
+    //     "VIP guruhga a'zolik ✅",
+    //   ],
+    //   icon: Zap,
+    //   color: "from-blue-600 to-blue-500",
+    //   hasLimitedSpots: true,
+    // },
   ]
 
   const scrollToCourses = () => {
@@ -107,43 +107,40 @@ export default function CoursesSection() {
   return (
     <section
       id="courses"
-      className={`relative py-16 lg:py-24 px-4 sm:px-6 lg:px-12 overflow-hidden ${
-        isDarkMode
-          ? "bg-gradient-to-br from-gray-950 via-black to-gray-950"
-          : "bg-gradient-to-br from-white via-gray-50 to-white"
-      }`}
+      className={`relative py-16 lg:py-24 px-4 sm:px-6 lg:px-12 overflow-hidden ${isDarkMode
+        ? "bg-gradient-to-br from-gray-950 via-black to-gray-950"
+        : "bg-gradient-to-br from-white via-gray-50 to-white"
+        }`}
     >
       {/* Background Effects */}
       {isDarkMode && (
         <>
-          <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-r from-red-900/10 to-red-800/8 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-r from-gray-900/8 to-red-900/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-r from-teal-900/10 to-teal-800/8 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-r from-gray-900/8 to-teal-900/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </>
       )}
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-20">
-          <div className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 font-semibold text-sm mb-6">
+          <div className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 font-semibold text-sm mb-6">
             <Zap className="w-4 h-4" />
             <span>CHEGIRMA MUDDATI CHEKLANGAN</span>
           </div>
 
           <h2
-            className={`text-3xl sm:text-4xl lg:text-6xl font-black mb-6 transition-all duration-200 ${
-              isDarkMode ? "text-white" : "text-gray-900"
-            }`}
+            className={`text-3xl sm:text-4xl lg:text-6xl font-black mb-6 transition-all duration-200 ${isDarkMode ? "text-white" : "text-gray-900"
+              }`}
           >
             O'quv dasturlarimiz
           </h2>
 
           <p
-            className={`text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto ${
-              isDarkMode ? "text-gray-100" : "text-gray-600"
-            }`}
+            className={`text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto ${isDarkMode ? "text-gray-100" : "text-gray-600"
+              }`}
           >
             Har xil darajadagi o'quvchilar uchun maxsus ishlab chiqilgan kurslar.
-            <span className="font-bold text-red-500"> Birinchi 10 ta mijozga maxsus chegirmalar!</span>
+            <span className="font-bold text-teal-500"> Birinchi 10 ta mijozga maxsus chegirmalar!</span>
           </p>
         </div>
 
@@ -157,26 +154,24 @@ export default function CoursesSection() {
                 .map((course) => (
                   <div
                     key={course.id}
-                    className={`relative h-full flex flex-col p-6 lg:p-8 rounded-3xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 group cursor-pointer ${
-                      course.popular
-                        ? isDarkMode
-                          ? "bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border-2 border-red-800/60 shadow-2xl shadow-red-900/30"
-                          : "bg-gradient-to-br from-white to-gray-50 border-2 border-red-200 shadow-2xl shadow-red-500/20"
-                        : isDarkMode
-                          ? "bg-gray-900/95 backdrop-blur-xl border border-gray-800/50 shadow-2xl shadow-black/20 hover:shadow-red-900/20"
-                          : "bg-white border border-gray-200 shadow-lg hover:shadow-2xl"
-                    }`}
+                    className={`relative h-full flex flex-col p-6 lg:p-8 rounded-3xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 group cursor-pointer ${course.popular
+                      ? isDarkMode
+                        ? "bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border-2 border-teal-800/60 shadow-2xl shadow-teal-900/30"
+                        : "bg-gradient-to-br from-white to-gray-50 border-2 border-teal-200 shadow-2xl shadow-teal-500/20"
+                      : isDarkMode
+                        ? "bg-gray-900/95 backdrop-blur-xl border border-gray-800/50 shadow-2xl shadow-black/20 hover:shadow-teal-900/20"
+                        : "bg-white border border-gray-200 shadow-lg hover:shadow-2xl"
+                      }`}
                     onClick={() => setSelectedCourse(course.id)}
                   >
                     {/* Limited Spots Animation */}
                     {course.hasLimitedSpots && (
                       <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
                         <div
-                          className={`px-4 py-2 rounded-full text-xs font-bold animate-pulse ${
-                            isDarkMode
-                              ? "bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg shadow-orange-900/40"
-                              : "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
-                          }`}
+                          className={`px-4 py-2 rounded-full text-xs font-bold animate-pulse ${isDarkMode
+                            ? "bg-gradient-to-r from-teal-600 to-teal-500 text-white shadow-lg shadow-teal-900/40"
+                            : "bg-gradient-to-r from-teal-500 to-teal-400 text-white shadow-lg"
+                            }`}
                         >
                           <div className="flex items-center space-x-1">
                             <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
@@ -216,14 +211,14 @@ export default function CoursesSection() {
                               {course.originalPrice}
                             </div>
                             <div
-                              className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}
+                              className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-teal-400" : "text-teal-600"}`}
                             >
                               {course.price}
                             </div>
                           </div>
                         ) : (
                           <div
-                            className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}
+                            className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-teal-400" : "text-teal-600"}`}
                           >
                             {course.price}
                           </div>
@@ -260,21 +255,21 @@ export default function CoursesSection() {
                             }
                           }}
                           style={{
-                            backgroundColor: course.popular ? "#dc2626" : "#1f2937",
+                            backgroundColor: course.popular ? "#0d9488" : "#1f2937",
                             color: "#ffffff",
-                            background: course.popular ? "linear-gradient(to right, #dc2626, #ef4444)" : "#1f2937",
+                            background: course.popular ? "linear-gradient(to right, #0d9488, #14b8a6)" : "#1f2937",
                           }}
                           className="w-full py-4 font-bold rounded-2xl transition-all duration-200 hover:scale-105 flex items-center justify-center gap-2 shadow-lg cursor-pointer"
                           onMouseEnter={(e) => {
                             if (course.popular) {
-                              e.currentTarget.style.background = "linear-gradient(to right, #ef4444, #f87171)"
+                              e.currentTarget.style.background = "linear-gradient(to right, #14b8a6, #2dd4bf)"
                             } else {
                               e.currentTarget.style.backgroundColor = "#374151"
                             }
                           }}
                           onMouseLeave={(e) => {
                             if (course.popular) {
-                              e.currentTarget.style.background = "linear-gradient(to right, #dc2626, #ef4444)"
+                              e.currentTarget.style.background = "linear-gradient(to right, #0d9488, #14b8a6)"
                             } else {
                               e.currentTarget.style.backgroundColor = "#1f2937"
                             }
@@ -315,23 +310,21 @@ export default function CoursesSection() {
                 .map((course) => (
                   <div
                     key={course.id}
-                    className={`relative h-full flex flex-col p-6 lg:p-8 rounded-3xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 group cursor-pointer ${
-                      course.popular
-                        ? isDarkMode
-                          ? "bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border-2 border-red-800/60 shadow-2xl shadow-red-900/30"
-                          : "bg-gradient-to-br from-white to-gray-50 border-2 border-red-200 shadow-2xl shadow-red-500/20"
-                        : isDarkMode
-                          ? "bg-gray-900/95 backdrop-blur-xl border border-gray-800/50 shadow-2xl shadow-black/20 hover:shadow-red-900/20"
-                          : "bg-white border border-gray-200 shadow-lg hover:shadow-2xl"
-                    }`}
+                    className={`relative h-full flex flex-col p-6 lg:p-8 rounded-3xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 group cursor-pointer ${course.popular
+                      ? isDarkMode
+                        ? "bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border-2 border-teal-800/60 shadow-2xl shadow-teal-900/30"
+                        : "bg-gradient-to-br from-white to-gray-50 border-2 border-teal-200 shadow-2xl shadow-teal-500/20"
+                      : isDarkMode
+                        ? "bg-gray-900/95 backdrop-blur-xl border border-gray-800/50 shadow-2xl shadow-black/20 hover:shadow-teal-900/20"
+                        : "bg-white border border-gray-200 shadow-lg hover:shadow-2xl"
+                      }`}
                     onClick={() => setSelectedCourse(course.id)}
                   >
                     {/* Popular Badge */}
                     {course.popular && (
                       <div
-                        className={`absolute -top-4 left-1/2 transform -translate-x-1/2 px-6 py-2 rounded-2xl text-xs font-bold ${
-                          isDarkMode ? "bg-red-600 text-white shadow-lg shadow-red-900/40" : "bg-red-600 text-white"
-                        } animate-pulse`}
+                        className={`absolute -top-4 left-1/2 transform -translate-x-1/2 px-6 py-2 rounded-2xl text-xs font-bold ${isDarkMode ? "bg-teal-600 text-white shadow-lg shadow-teal-900/40" : "bg-teal-600 text-white"
+                          } animate-pulse`}
                       >
                         <Star className="w-4 h-4 inline mr-1" />
                         ENG MASHHUR
@@ -368,14 +361,14 @@ export default function CoursesSection() {
                               {course.originalPrice}
                             </div>
                             <div
-                              className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}
+                              className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-teal-400" : "text-teal-600"}`}
                             >
                               {course.price}
                             </div>
                           </div>
                         ) : (
                           <div
-                            className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}
+                            className={`text-2xl lg:text-3xl font-bold ${isDarkMode ? "text-teal-400" : "text-teal-600"}`}
                           >
                             {course.price}
                           </div>
@@ -412,21 +405,21 @@ export default function CoursesSection() {
                             }
                           }}
                           style={{
-                            backgroundColor: course.popular ? "#dc2626" : "#1f2937",
+                            backgroundColor: course.popular ? "#0d9488" : "#1f2937",
                             color: "#ffffff",
-                            background: course.popular ? "linear-gradient(to right, #dc2626, #ef4444)" : "#1f2937",
+                            background: course.popular ? "linear-gradient(to right, #0d9488, #14b8a6)" : "#1f2937",
                           }}
                           className="w-full py-4 font-bold rounded-2xl transition-all duration-200 hover:scale-105 flex items-center justify-center gap-2 shadow-lg cursor-pointer"
                           onMouseEnter={(e) => {
                             if (course.popular) {
-                              e.currentTarget.style.background = "linear-gradient(to right, #ef4444, #f87171)"
+                              e.currentTarget.style.background = "linear-gradient(to right, #14b8a6, #2dd4bf)"
                             } else {
                               e.currentTarget.style.backgroundColor = "#374151"
                             }
                           }}
                           onMouseLeave={(e) => {
                             if (course.popular) {
-                              e.currentTarget.style.background = "linear-gradient(to right, #dc2626, #ef4444)"
+                              e.currentTarget.style.background = "linear-gradient(to right, #0d9488, #14b8a6)"
                             } else {
                               e.currentTarget.style.backgroundColor = "#1f2937"
                             }
@@ -460,21 +453,20 @@ export default function CoursesSection() {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        {/* VAQTINCHA KOMENTDA */}
+        {/* <div className="text-center mt-16">
           <div
-            className={`inline-flex items-center space-x-3 px-8 py-4 rounded-2xl ${
-              isDarkMode
-                ? "bg-yellow-900/20 border border-yellow-700/40 text-yellow-200"
-                : "bg-yellow-50 border border-yellow-200 text-yellow-800"
-            }`}
+            className={`inline-flex items-center space-x-3 px-8 py-4 rounded-2xl ${isDarkMode
+              ? "bg-yellow-900/20 border border-yellow-700/40 text-yellow-200"
+              : "bg-yellow-50 border border-yellow-200 text-yellow-800"
+              }`}
           >
             <Clock className="w-5 h-5 text-yellow-500" />
             <span className="font-bold text-lg">
               CHEGIRMA FAQAT 48 SOAT DAVOMIDA! ULGURMASANGIZ NARX 2 BARAVAR OSHADI!
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <PurchaseModal

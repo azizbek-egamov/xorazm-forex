@@ -13,6 +13,32 @@ export default function GallerySection() {
 
   const galleryImages = [
     {
+      src: "/images/s1.jpg",
+      alt: "Xorazm Forex - Yangi rasm 1",
+      title: "O'quvchilar bilan",
+    },
+    {
+      src: "/images/s2.jpg",
+      alt: "Xorazm Forex - Yangi rasm 2",
+      title: "O'quvchilar bilan",
+    },
+    {
+      src: "/images/s3.jpg",
+      alt: "Xorazm Forex - Yangi rasm 3",
+      title: "O'quvchilar bilan",
+    },
+
+    {
+      src: "/images/s5.jpg",
+      alt: "Xorazm Forex - Yangi rasm 5",
+      title: "O'quvchilar bilan",
+    },
+    {
+      src: "/images/s6.jpg",
+      alt: "Xorazm Forex - Yangi rasm 6",
+      title: "O'quvchilar bilan",
+    },
+    {
       src: "/images/gallery-1.png",
       alt: "Argentina jamoasi - Xorazm Forex futbol klubi",
       title: "Argentina jamoasi",
@@ -78,9 +104,8 @@ export default function GallerySection() {
         {/* Header */}
         <div className="text-center mb-16 lg:mb-20">
           <h2
-            className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ${
-              isDarkMode ? "text-gray-100" : "text-gray-900"
-            }`}
+            className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ${isDarkMode ? "text-gray-100" : "text-gray-900"
+              }`}
           >
             Bizning galereya
           </h2>
@@ -94,9 +119,8 @@ export default function GallerySection() {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className={`relative aspect-square cursor-pointer group overflow-hidden rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${
-                isDarkMode ? "border-gray-700 hover:border-red-400" : "border-gray-200 hover:border-red-300"
-              }`}
+              className={`relative aspect-square cursor-pointer group overflow-hidden rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${isDarkMode ? "border-gray-700 hover:border-teal-400" : "border-gray-200 hover:border-teal-300"
+                }`}
               onClick={() => openGallery(index)}
             >
               <Image
@@ -123,11 +147,10 @@ export default function GallerySection() {
               {/* Close Button */}
               <button
                 onClick={() => setIsGalleryOpen(false)}
-                className={`absolute top-4 right-4 z-50 w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
-                  isDarkMode
-                    ? "bg-gray-800 hover:bg-red-600 text-gray-200 hover:text-white"
-                    : "bg-gray-100 hover:bg-red-600 hover:text-white"
-                }`}
+                className={`absolute top-4 right-4 z-50 w-12 h-12 rounded-full flex items-center justify-center transition-colors ${isDarkMode
+                  ? "bg-gray-800 hover:bg-teal-600 text-gray-200 hover:text-white"
+                  : "bg-gray-100 hover:bg-teal-600 hover:text-white"
+                  }`}
               >
                 <X className="w-6 h-6" />
               </button>
@@ -135,11 +158,10 @@ export default function GallerySection() {
               {/* Previous Button */}
               <button
                 onClick={previousImage}
-                className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-40 w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
-                  isDarkMode
-                    ? "bg-gray-800 hover:bg-gray-700 text-gray-200"
-                    : "bg-gray-100 hover:bg-gray-200 text-gray-700"
-                }`}
+                className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-40 w-12 h-12 rounded-full flex items-center justify-center transition-colors ${isDarkMode
+                  ? "bg-gray-800 hover:bg-gray-700 text-gray-200"
+                  : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                  }`}
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
@@ -147,11 +169,10 @@ export default function GallerySection() {
               {/* Next Button */}
               <button
                 onClick={nextImage}
-                className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-40 w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
-                  isDarkMode
-                    ? "bg-gray-800 hover:bg-gray-700 text-gray-200"
-                    : "bg-gray-100 hover:bg-gray-200 text-gray-700"
-                }`}
+                className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-40 w-12 h-12 rounded-full flex items-center justify-center transition-colors ${isDarkMode
+                  ? "bg-gray-800 hover:bg-gray-700 text-gray-200"
+                  : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                  }`}
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -183,9 +204,8 @@ export default function GallerySection() {
                       <button
                         key={index}
                         onClick={() => setCurrentImageIndex(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                          index === currentImageIndex ? "bg-red-500 scale-125" : "bg-gray-300 hover:bg-gray-400"
-                        }`}
+                        className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentImageIndex ? "bg-teal-500 scale-125" : "bg-gray-300 hover:bg-gray-400"
+                          }`}
                       />
                     ))}
                   </div>

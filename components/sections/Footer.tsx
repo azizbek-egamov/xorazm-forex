@@ -16,9 +16,8 @@ export default function Footer() {
 
   return (
     <footer
-      className={`py-12 lg:py-16 px-4 sm:px-6 lg:px-12 border-t ${
-        isDarkMode ? "bg-black border-gray-800 text-white" : "bg-white border-gray-100"
-      }`}
+      className={`py-12 lg:py-16 px-4 sm:px-6 lg:px-12 border-t ${isDarkMode ? "bg-black border-gray-800 text-white" : "bg-white border-gray-100"
+        }`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
@@ -30,9 +29,8 @@ export default function Footer() {
                 alt="Xorazm Forex Logo"
                 width={160}
                 height={80}
-                className={`h-14 lg:h-16 w-auto transition-all duration-200 ${
-                  isDarkMode ? "brightness-0 invert" : "brightness-100"
-                }`}
+                className={`h-14 lg:h-16 w-auto transition-all duration-200 ${isDarkMode ? "brightness-0 invert" : "brightness-100"
+                  }`}
               />
             </a>
           </div>
@@ -54,9 +52,8 @@ export default function Footer() {
               href="https://www.instagram.com/xorazmforex/"
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-125 hover:-translate-y-2 overflow-hidden ${
-                isDarkMode ? "bg-gray-900 hover:bg-pink-600" : "bg-gray-100 hover:bg-pink-600"
-              }`}
+              className={`group relative w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-125 hover:-translate-y-2 overflow-hidden ${isDarkMode ? "bg-gray-900 hover:bg-pink-600" : "bg-gray-100 hover:bg-pink-600"
+                }`}
             >
               {/* Animated background */}
               <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -65,9 +62,8 @@ export default function Footer() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 
               <Instagram
-                className={`w-6 h-6 transition-all duration-300 group-hover:scale-110 group-hover:animate-pulse relative z-10 ${
-                  isDarkMode ? "text-gray-200 group-hover:text-white" : "text-gray-600 group-hover:text-white"
-                }`}
+                className={`w-6 h-6 transition-all duration-300 group-hover:scale-110 group-hover:animate-pulse relative z-10 ${isDarkMode ? "text-gray-200 group-hover:text-white" : "text-gray-600 group-hover:text-white"
+                  }`}
               />
 
               {/* Floating particles */}
@@ -78,9 +74,8 @@ export default function Footer() {
               href="https://t.me/thexorazmforex"
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-125 hover:-translate-y-2 overflow-hidden ${
-                isDarkMode ? "bg-gray-900 hover:bg-blue-600" : "bg-gray-100 hover:bg-blue-600"
-              }`}
+              className={`group relative w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-125 hover:-translate-y-2 overflow-hidden ${isDarkMode ? "bg-gray-900 hover:bg-blue-600" : "bg-gray-100 hover:bg-blue-600"
+                }`}
             >
               {/* Animated background */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -89,9 +84,8 @@ export default function Footer() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 
               <Send
-                className={`w-6 h-6 transition-all duration-300 group-hover:scale-110 group-hover:animate-pulse relative z-10 ${
-                  isDarkMode ? "text-gray-200 group-hover:text-white" : "text-gray-600 group-hover:text-white"
-                }`}
+                className={`w-6 h-6 transition-all duration-300 group-hover:scale-110 group-hover:animate-pulse relative z-10 ${isDarkMode ? "text-gray-200 group-hover:text-white" : "text-gray-600 group-hover:text-white"
+                  }`}
               />
 
               {/* Floating particles */}
@@ -102,24 +96,22 @@ export default function Footer() {
               href="https://www.youtube.com/@XorazmForex"
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-125 hover:-translate-y-2 overflow-hidden ${
-                isDarkMode ? "bg-gray-900 hover:bg-red-600" : "bg-gray-100 hover:bg-red-600"
-              }`}
+              className={`group relative w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-125 hover:-translate-y-2 overflow-hidden ${isDarkMode ? "bg-gray-900 hover:bg-teal-600" : "bg-gray-100 hover:bg-teal-600"
+                }`}
             >
               {/* Animated background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               {/* Shimmer effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 
               <Youtube
-                className={`w-6 h-6 transition-all duration-300 group-hover:scale-110 group-hover:animate-pulse relative z-10 ${
-                  isDarkMode ? "text-gray-200 group-hover:text-white" : "text-gray-600 group-hover:text-white"
-                }`}
+                className={`w-6 h-6 transition-all duration-300 group-hover:scale-110 group-hover:animate-pulse relative z-10 ${isDarkMode ? "text-gray-200 group-hover:text-white" : "text-gray-600 group-hover:text-white"
+                  }`}
               />
 
               {/* Floating particles */}
-              <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-red-300 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
+              <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-teal-300 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
             </a>
           </div>
         </div>
@@ -132,9 +124,8 @@ export default function Footer() {
 
           <button
             onClick={scrollToTop}
-            className={`group w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-125 hover:-translate-y-2 relative overflow-hidden ${
-              isDarkMode ? "bg-red-600 hover:bg-red-500" : "bg-red-600 hover:bg-red-700"
-            } text-white shadow-lg`}
+            className={`group w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-125 hover:-translate-y-2 relative overflow-hidden ${isDarkMode ? "bg-teal-600 hover:bg-teal-500" : "bg-teal-600 hover:bg-teal-700"
+              } text-white shadow-lg`}
           >
             {/* Shimmer effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>

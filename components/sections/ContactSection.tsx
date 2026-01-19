@@ -82,28 +82,27 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className={`relative py-16 lg:py-24 px-4 sm:px-6 lg:px-12 text-white overflow-hidden ${
-        isDarkMode ? "bg-black" : "bg-gray-900"
-      }`}
+      className={`relative py-16 lg:py-24 px-4 sm:px-6 lg:px-12 text-white overflow-hidden ${isDarkMode ? "bg-black" : "bg-gray-900"
+        }`}
     >
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-r from-red-900/15 to-red-800/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-900/10 to-red-900/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-r from-teal-900/15 to-teal-800/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-900/10 to-teal-900/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Contest Banner */}
-        <div className="text-center mb-16">
-          <div className="inline-block bg-gradient-to-r from-red-600 to-red-500 px-8 py-6 rounded-2xl shadow-2xl mb-8 animate-pulse">
+        {/* VAQTINCHA KOMENTDA - Contest Banner */}
+        {/* <div className="text-center mb-16">
+          <div className="inline-block bg-gradient-to-r from-teal-600 to-teal-500 px-8 py-6 rounded-2xl shadow-2xl mb-8 animate-pulse">
             <div className="flex items-center justify-center space-x-3 mb-4">
               <Gift className="w-8 h-8 text-white animate-bounce" />
               <h3 className="text-2xl lg:text-4xl font-black">KONKURS UCHUN KOD:</h3>
             </div>
-            <div className="text-3xl lg:text-5xl font-black text-white bg-red-800 px-6 py-3 rounded-xl mb-4 animate-pulse">
+            <div className="text-3xl lg:text-5xl font-black text-white bg-teal-800 px-6 py-3 rounded-xl mb-4 animate-pulse">
               XF2959
             </div>
-            <p className="text-red-100 text-lg lg:text-xl font-semibold">
+            <p className="text-teal-100 text-lg lg:text-xl font-semibold">
               Ushbu kodni adminga jo'nating va 30$ bonus + chegirmani qo'lga kiriting!
             </p>
           </div>
@@ -115,15 +114,14 @@ export default function ContactSection() {
               <ExternalLink className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
             </Button>
           </a>
-        </div>
+        </div> */}
 
         {/* Main Contact Section */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Enhanced Contact Form */}
           <div
-            className={`rounded-2xl p-8 lg:p-10 shadow-2xl relative overflow-hidden ${
-              isDarkMode ? "bg-gray-950/95 backdrop-blur-xl border border-gray-800/50" : "bg-white"
-            }`}
+            className={`rounded-2xl p-8 lg:p-10 shadow-2xl relative overflow-hidden ${isDarkMode ? "bg-gray-950/95 backdrop-blur-xl border border-gray-800/50" : "bg-white"
+              }`}
           >
             {/* Success Animation Overlay */}
             {isSuccess && (
@@ -152,11 +150,10 @@ export default function ContactSection() {
               <div className="group">
                 <label
                   htmlFor="name"
-                  className={`block text-sm font-semibold mb-3 transition-colors duration-200 ${
-                    isDarkMode
-                      ? "text-gray-100 group-focus-within:text-red-400"
-                      : "text-gray-800 group-focus-within:text-red-600"
-                  }`}
+                  className={`block text-sm font-semibold mb-3 transition-colors duration-200 ${isDarkMode
+                    ? "text-gray-100 group-focus-within:text-teal-400"
+                    : "text-gray-800 group-focus-within:text-teal-600"
+                    }`}
                 >
                   Ismingiz *
                 </label>
@@ -168,11 +165,10 @@ export default function ContactSection() {
                   value={formData.name}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className={`w-full px-4 py-4 border-2 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-lg hover:border-red-300 ${
-                    isDarkMode
-                      ? "bg-gray-900/80 text-white border-gray-700 hover:bg-gray-800/80 focus:bg-gray-800/80 placeholder:text-gray-300"
-                      : "bg-white text-gray-900 border-gray-300 hover:bg-gray-50 focus:bg-white placeholder:text-gray-600"
-                  } disabled:opacity-50 disabled:cursor-not-allowed`}
+                  className={`w-full px-4 py-4 border-2 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 text-lg hover:border-teal-300 ${isDarkMode
+                    ? "bg-gray-900/80 text-white border-gray-700 hover:bg-gray-800/80 focus:bg-gray-800/80 placeholder:text-gray-300"
+                    : "bg-white text-gray-900 border-gray-300 hover:bg-gray-50 focus:bg-white placeholder:text-gray-600"
+                    } disabled:opacity-50 disabled:cursor-not-allowed`}
                   placeholder="Ismingizni kiriting"
                 />
               </div>
@@ -180,11 +176,10 @@ export default function ContactSection() {
               <div className="group">
                 <label
                   htmlFor="phone"
-                  className={`block text-sm font-semibold mb-3 transition-colors duration-200 ${
-                    isDarkMode
-                      ? "text-gray-100 group-focus-within:text-red-400"
-                      : "text-gray-800 group-focus-within:text-red-600"
-                  }`}
+                  className={`block text-sm font-semibold mb-3 transition-colors duration-200 ${isDarkMode
+                    ? "text-gray-100 group-focus-within:text-teal-400"
+                    : "text-gray-800 group-focus-within:text-teal-600"
+                    }`}
                 >
                   Telefon raqamingiz *
                 </label>
@@ -196,11 +191,10 @@ export default function ContactSection() {
                   value={formData.phone}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className={`w-full px-4 py-4 border-2 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-lg hover:border-red-300 ${
-                    isDarkMode
-                      ? "bg-gray-900/80 text-white border-gray-700 hover:bg-gray-800/80 focus:bg-gray-800/80 placeholder:text-gray-300"
-                      : "bg-white text-gray-900 border-gray-300 hover:bg-gray-50 focus:bg-white placeholder:text-gray-600"
-                  } disabled:opacity-50 disabled:cursor-not-allowed`}
+                  className={`w-full px-4 py-4 border-2 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 text-lg hover:border-teal-300 ${isDarkMode
+                    ? "bg-gray-900/80 text-white border-gray-700 hover:bg-gray-800/80 focus:bg-gray-800/80 placeholder:text-gray-300"
+                    : "bg-white text-gray-900 border-gray-300 hover:bg-gray-50 focus:bg-white placeholder:text-gray-600"
+                    } disabled:opacity-50 disabled:cursor-not-allowed`}
                   placeholder="+998 (90) 123-45-67"
                 />
               </div>
@@ -208,11 +202,10 @@ export default function ContactSection() {
               <div className="group">
                 <label
                   htmlFor="message"
-                  className={`block text-sm font-semibold mb-3 transition-colors duration-200 ${
-                    isDarkMode
-                      ? "text-gray-100 group-focus-within:text-red-400"
-                      : "text-gray-800 group-focus-within:text-red-600"
-                  }`}
+                  className={`block text-sm font-semibold mb-3 transition-colors duration-200 ${isDarkMode
+                    ? "text-gray-100 group-focus-within:text-teal-400"
+                    : "text-gray-800 group-focus-within:text-teal-600"
+                    }`}
                 >
                   Murojaatingiz *
                 </label>
@@ -224,30 +217,28 @@ export default function ContactSection() {
                   onChange={handleInputChange}
                   disabled={isSubmitting}
                   rows={4}
-                  className={`w-full px-4 py-4 border-2 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 resize-none text-lg hover:border-red-300 ${
-                    isDarkMode
-                      ? "bg-gray-900/80 text-white border-gray-700 hover:bg-gray-800/80 focus:bg-gray-800/80 placeholder:text-gray-300"
-                      : "bg-white text-gray-900 border-gray-300 hover:bg-gray-50 focus:bg-white placeholder:text-gray-600"
-                  } disabled:opacity-50 disabled:cursor-not-allowed`}
+                  className={`w-full px-4 py-4 border-2 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 resize-none text-lg hover:border-teal-300 ${isDarkMode
+                    ? "bg-gray-900/80 text-white border-gray-700 hover:bg-gray-800/80 focus:bg-gray-800/80 placeholder:text-gray-300"
+                    : "bg-white text-gray-900 border-gray-300 hover:bg-gray-50 focus:bg-white placeholder:text-gray-600"
+                    } disabled:opacity-50 disabled:cursor-not-allowed`}
                   placeholder="Qaysi kurs sizni qiziqtiradi? Savollaringizni yozing..."
                 />
               </div>
 
               {/* Error Message */}
               {error && (
-                <div className="p-4 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-xl">
-                  <p className="text-red-700 dark:text-red-300 text-sm font-medium">{error}</p>
+                <div className="p-4 bg-teal-100 dark:bg-teal-900/30 border border-teal-300 dark:border-teal-700 rounded-xl">
+                  <p className="text-teal-700 dark:text-teal-300 text-sm font-medium">{error}</p>
                 </div>
               )}
 
               <Button
                 type="submit"
                 disabled={isSubmitting || isSuccess}
-                className={`w-full py-4 rounded-xl text-xl font-bold transition-all duration-300 hover:scale-105 shadow-lg relative overflow-hidden group ${
-                  isSubmitting
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 hover:shadow-2xl"
-                } text-white disabled:opacity-50`}
+                className={`w-full py-4 rounded-xl text-xl font-bold transition-all duration-300 hover:scale-105 shadow-lg relative overflow-hidden group ${isSubmitting
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-400 hover:shadow-2xl"
+                  } text-white disabled:opacity-50`}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 
@@ -271,7 +262,7 @@ export default function ContactSection() {
 
               <p className={`text-xs text-center leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
                 Tugmani bosish orqali siz{" "}
-                <a href="#" className="text-red-500 hover:underline font-semibold transition-colors duration-200">
+                <a href="#" className="text-teal-500 hover:underline font-semibold transition-colors duration-200">
                   shaxsiy ma'lumotlarni qayta ishlash
                 </a>{" "}
                 ga rozilik bildirasiz
@@ -283,7 +274,7 @@ export default function ContactSection() {
           <div className="space-y-8 lg:space-y-10">
             <div>
               <h3 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
-                Boshqa savollaringiz bo'lsa, <span className="text-red-400">albatta javob beramiz!</span>
+                Boshqa savollaringiz bo'lsa, <span className="text-teal-400">albatta javob beramiz!</span>
               </h3>
               <p className="text-xl text-gray-100 mb-8">24/7 qo'llab-quvvatlash xizmati va tezkor javoblar</p>
             </div>
@@ -332,10 +323,10 @@ export default function ContactSection() {
                 href="https://www.youtube.com/@XorazmForex"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative w-16 h-16 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-125 hover:-translate-y-2 shadow-lg hover:shadow-red-500/40 overflow-hidden"
+                className="group relative w-16 h-16 bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-400 rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-125 hover:-translate-y-2 shadow-lg hover:shadow-teal-500/40 overflow-hidden"
               >
                 {/* Animated background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 {/* Shimmer effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -343,7 +334,7 @@ export default function ContactSection() {
                 <Youtube className="w-8 h-8 text-white group-hover:animate-pulse group-hover:scale-110 transition-all duration-300 relative z-10" />
 
                 {/* Floating particles */}
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-300 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-teal-300 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
                 <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-orange-300 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping delay-200"></div>
               </a>
             </div>
@@ -352,25 +343,23 @@ export default function ContactSection() {
             <div className="space-y-6">
               <a
                 href="tel:+998880223366"
-                className={`group flex items-center space-x-6 p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${
-                  isDarkMode ? "bg-gray-900 hover:bg-gray-800" : "bg-gray-800 hover:bg-gray-700"
-                } hover:shadow-lg`}
+                className={`group flex items-center space-x-6 p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${isDarkMode ? "bg-gray-900 hover:bg-gray-800" : "bg-gray-800 hover:bg-gray-700"
+                  } hover:shadow-lg`}
               >
-                <div className="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-teal-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Phone className="w-7 h-7 text-white group-hover:animate-pulse" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-200 mb-1">Telefon raqam</p>
-                  <p className="text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
+                  <p className="text-xl font-bold text-white group-hover:text-teal-400 transition-colors duration-300">
                     +998 88 022 33 66
                   </p>
                 </div>
               </a>
 
               <div
-                className={`group flex items-center space-x-6 p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${
-                  isDarkMode ? "bg-gray-900 hover:bg-gray-800" : "bg-gray-800 hover:bg-gray-700"
-                } hover:shadow-lg`}
+                className={`group flex items-center space-x-6 p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${isDarkMode ? "bg-gray-900 hover:bg-gray-800" : "bg-gray-800 hover:bg-gray-700"
+                  } hover:shadow-lg`}
               >
                 <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <MapPin className="w-7 h-7 text-white group-hover:animate-pulse" />
@@ -384,9 +373,8 @@ export default function ContactSection() {
               </div>
 
               <div
-                className={`group flex items-center space-x-6 p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${
-                  isDarkMode ? "bg-gray-900 hover:bg-gray-800" : "bg-gray-800 hover:bg-gray-700"
-                } hover:shadow-lg`}
+                className={`group flex items-center space-x-6 p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${isDarkMode ? "bg-gray-900 hover:bg-gray-800" : "bg-gray-800 hover:bg-gray-700"
+                  } hover:shadow-lg`}
               >
                 <div className="w-14 h-14 bg-green-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Clock className="w-7 h-7 text-white group-hover:animate-pulse" />
@@ -402,9 +390,8 @@ export default function ContactSection() {
 
             {/* Enhanced Map */}
             <div
-              className={`rounded-2xl p-6 transition-all duration-300 hover:scale-105 ${
-                isDarkMode ? "bg-gray-900 hover:bg-gray-800" : "bg-gray-800 hover:bg-gray-700"
-              }`}
+              className={`rounded-2xl p-6 transition-all duration-300 hover:scale-105 ${isDarkMode ? "bg-gray-900 hover:bg-gray-800" : "bg-gray-800 hover:bg-gray-700"
+                }`}
             >
               <div className="w-full h-64 bg-gray-300 rounded-xl overflow-hidden shadow-lg">
                 <iframe

@@ -11,7 +11,7 @@ export default function StatsSection() {
       icon: Award,
       number: "18",
       label: "yillik tajriba",
-      color: "text-red-500",
+      color: "text-teal-500",
     },
     {
       icon: Users,

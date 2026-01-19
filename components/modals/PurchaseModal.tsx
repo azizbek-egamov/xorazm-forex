@@ -175,21 +175,19 @@ export default function PurchaseModal({ isOpen, onClose, course }: PurchaseModal
           {[1, 2, 3].map((stepNumber) => (
             <div key={stepNumber} className="flex items-center">
               <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
-                  step >= stepNumber
-                    ? "bg-red-600 text-white"
+                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${step >= stepNumber
+                    ? "bg-teal-600 text-white"
                     : isDarkMode
                       ? "bg-gray-700 text-gray-300"
                       : "bg-gray-200 text-gray-600"
-                }`}
+                  }`}
               >
                 {stepNumber}
               </div>
               {stepNumber < 3 && (
                 <div
-                  className={`w-8 h-0.5 mx-2 transition-all duration-300 ${
-                    step > stepNumber ? "bg-red-600" : isDarkMode ? "bg-gray-700" : "bg-gray-200"
-                  }`}
+                  className={`w-8 h-0.5 mx-2 transition-all duration-300 ${step > stepNumber ? "bg-teal-600" : isDarkMode ? "bg-gray-700" : "bg-gray-200"
+                    }`}
                 />
               )}
             </div>
@@ -200,8 +198,8 @@ export default function PurchaseModal({ isOpen, onClose, course }: PurchaseModal
         <div className={`p-4 rounded-lg mb-6 ${isDarkMode ? "bg-gray-800" : "bg-gray-50"}`}>
           <h3 className={`font-bold text-lg ${isDarkMode ? "text-white" : "text-gray-900"}`}>{course.name} kursi</h3>
           <div className="flex items-center space-x-2 mt-2">
-            {course.originalPrice && <span className="text-red-500 line-through text-sm">{course.originalPrice}</span>}
-            <span className={`text-xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}>{course.price}</span>
+            {course.originalPrice && <span className="text-gray-500 line-through text-sm">{course.originalPrice}</span>}
+            <span className={`text-xl font-bold ${isDarkMode ? "text-teal-400" : "text-teal-600"}`}>{course.price}</span>
           </div>
         </div>
 
@@ -280,15 +278,14 @@ export default function PurchaseModal({ isOpen, onClose, course }: PurchaseModal
                   To'lov cheki rasmini yuklang *
                 </label>
                 <div
-                  className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors duration-200 ${
-                    formData.receiptImage
+                  className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors duration-200 ${formData.receiptImage
                       ? isDarkMode
                         ? "border-green-600 bg-green-900/20"
                         : "border-green-500 bg-green-50"
                       : isDarkMode
                         ? "border-gray-600 hover:border-gray-500"
                         : "border-gray-300 hover:border-gray-400"
-                  }`}
+                    }`}
                 >
                   <input
                     type="file"
@@ -344,7 +341,7 @@ export default function PurchaseModal({ isOpen, onClose, course }: PurchaseModal
               <Button
                 onClick={handleContinue}
                 disabled={step === 1 && (!formData.fullName || !formData.phone)}
-                className="bg-red-600 hover:bg-red-500 text-white"
+                className="bg-teal-600 hover:bg-teal-500 text-white"
               >
                 Davom etish
                 <ArrowRight className="w-4 h-4 ml-2" />
