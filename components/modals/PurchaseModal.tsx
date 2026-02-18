@@ -45,7 +45,7 @@ export default function PurchaseModal({ isOpen, onClose, course }: PurchaseModal
     receiptImage: null as File | null,
   })
 
-  const cardNumber = "8600 1204 1840 9390"
+  const cardNumber = "4998 9300 0743 1657"
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
