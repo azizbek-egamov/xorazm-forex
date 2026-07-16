@@ -90,14 +90,14 @@ export default function Header() {
         <div className="flex items-center space-x-2 sm:space-x-3">
           {/* Phone Number - Hidden on mobile */}
           <a
-            href="tel:+998880223366"
+            href="tel:+998975600600"
             className={`hidden md:flex items-center space-x-2 text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl transition-all duration-200 hover:scale-105 backdrop-blur-md ${isDarkMode
                 ? "text-gray-300 bg-gray-800/40 hover:bg-gray-700/60"
                 : "text-gray-600 bg-gray-50 hover:bg-gray-100"
               }`}
           >
             <Phone className="w-3 sm:w-4 h-3 sm:h-4" />
-            <span className="font-medium">+998 88 022 33 66</span>
+            <span className="font-medium">+998 97 560 06 00</span>
           </a>
 
           {/* Theme Toggle */}
@@ -222,14 +222,14 @@ export default function Header() {
           {/* Mobile Actions */}
           <div className="pt-3 sm:pt-4 border-t border-gray-200 dark:border-gray-800 space-y-2 sm:space-y-3">
             <a
-              href="tel:+998880223366"
+              href="tel:+998975600600"
               className={`flex items-center space-x-3 px-3 sm:px-4 py-2 sm:py-3 rounded-xl text-sm sm:text-base transition-all duration-200 hover:scale-105 ${isDarkMode
                   ? "bg-gray-800/40 text-gray-300 hover:bg-gray-700/60"
                   : "bg-gray-50 text-gray-600 hover:bg-gray-100"
                 }`}
             >
               <Phone className="w-4 sm:w-5 h-4 sm:h-5" />
-              <span>+998 88 022 33 66</span>
+              <span>+998 97 560 06 00</span>
             </a>
             <div
               onClick={() => scrollToSection("courses")}
