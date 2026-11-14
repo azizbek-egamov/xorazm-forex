@@ -43,7 +43,10 @@ export async function POST(request: NextRequest) {
     try {
       await validateAndProcessImage(receiptImage)
     } catch (imageError) {
-      return NextResponse.json({ error: imageError.message }, { status: 400 })
+      return NextResponse.json(
+        { error: imageError instanceof Error ? imageError.message : "Rasmni tekshirishda xatolik" },
+        { status: 400 },
+      )
     }
 
     // Format message for Telegram

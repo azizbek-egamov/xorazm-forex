@@ -23,5 +23,15 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "proptrading",
+    "components/sections",
+    "components/ui",
+    "components/modals",
+    "components/providers",
+    "components/LoadingScreen.tsx",
+    "components/theme-provider.tsx",
+    "hooks"
+  ]
 }
