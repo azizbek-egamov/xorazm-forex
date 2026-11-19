@@ -69,7 +69,7 @@ export default function HeroSection() {
           </div>
 
           <div className="mt-10 grid max-w-2xl gap-4 border-t border-slate-300 pt-7 sm:grid-cols-3">
-            {["5 ta ta’lim formati", "$1K–$400K prop kapital", "Urganch va onlayn"].map((item) => (
+            {["5 ta ta’lim formati", "$10K–$200K prop kapital", "Urganch va onlayn"].map((item) => (
               <div key={item} className="flex items-center gap-2 text-sm font-bold text-slate-700">
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-red-700" />
                 {item}

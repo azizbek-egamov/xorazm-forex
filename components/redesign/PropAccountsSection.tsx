@@ -1,15 +1,36 @@
 "use client"
 
 import { useState } from "react"
-import { ArrowRight, CheckCircle2, MessageCircle, Phone, Send, ShieldCheck, UserCheck } from "lucide-react"
+import Image from "next/image"
+import {
+  ArrowRight,
+  CheckCircle2,
+  Phone,
+  Send,
+  ShieldCheck,
+  UserCheck,
+  Crown,
+  Zap,
+  Target,
+  RefreshCw,
+  Calendar,
+  Infinity as InfinityIcon,
+  AlertTriangle,
+  FileText,
+  Eye,
+  X,
+  Sparkles
+} from "lucide-react"
 import { formatPrice, propCategories, siteContacts, type PropCategory } from "@/lib/site-data"
 import OrderModal, { type OrderProduct } from "./OrderModal"
 import Reveal from "./Reveal"
 
 export default function PropAccountsSection() {
-  const [activeId, setActiveId] = useState<PropCategory["id"]>("premium")
+  const [activeId, setActiveId] = useState<PropCategory["id"]>("imtihonli")
   const [product, setProduct] = useState<OrderProduct | null>(null)
-  const active = propCategories.find((category) => category.id === activeId)!
+  const [previewPoster, setPreviewPoster] = useState<string | null>(null)
+
+  const active = propCategories.find((category) => category.id === activeId) ?? propCategories[0]
 
   return (
     <section id="prop-accounts" className="scroll-mt-20 bg-[#f7f7f5] py-20 md:py-28">
@@ -22,7 +43,7 @@ export default function PropAccountsSection() {
           </Reveal>
           <Reveal delay={100}>
             <p className="section-copy lg:pb-2">
-              Katta kapital bilan savdo qilish uchun hisob turini, shartlarini va narxini solishtiring. Har bir xaridga rasmiylashtirish va konsultatsiya xizmati qo‘shiladi.
+              Katta kapital bilan savdo qilish uchun yangilangan rasmiy prop hisoblarni tanlang. Imtihonli yoki darhol real savdo — barcha hisoblar uchun <strong>XF jamoasi 100% kafolat</strong> beradi!
             </p>
           </Reveal>
         </div>
@@ -37,10 +58,10 @@ export default function PropAccountsSection() {
                   PROP MENEDJER
                 </div>
                 <h3 className="text-xl font-black text-slate-950 sm:text-2xl">
-                  Prop hisob tanlashda qiynalyapsizmi?
+                  Prop hisob tanlashda yordam kerakmi?
                 </h3>
                 <p className="max-w-xl text-sm leading-6 text-slate-600">
-                  Imtihonli yoki tayyor real hisob tanlash, qoidalar va rasmiylashtirish bo‘yicha maxsus <strong>PROP MENEDJER</strong> bilan to‘g‘ridan-to‘g‘ri bog‘laning.
+                  Imtihonli yoki real hisob tanlash, qoidalar va rasmiylashtirish bo‘yicha maxsus <strong>PROP MENEDJER</strong> bilan to‘g‘ridan-to‘g‘ri bog‘laning.
                 </p>
               </div>
 
@@ -59,81 +80,218 @@ export default function PropAccountsSection() {
                   className="flex items-center justify-center gap-2 rounded-2xl border-2 border-slate-300 bg-white px-5 py-4 font-bold text-slate-800 transition hover:border-slate-500 hover:bg-slate-50"
                 >
                   <Send className="h-4 w-4 text-sky-600" />
-                  <span>Telegramda yozish</span>
+                  <span>Telegram Admin: @xfprop</span>
                 </a>
               </div>
             </div>
           </div>
         </Reveal>
 
-        {/* Category Switcher */}
-        <Reveal delay={130} className="mt-8 grid gap-3 rounded-2xl border border-slate-200 bg-white p-2 shadow-sm md:grid-cols-3">
+        {/* 2 Category Switcher Buttons */}
+        <Reveal delay={130} className="mt-8 grid gap-3 rounded-2xl border border-slate-200 bg-white p-2 shadow-sm sm:grid-cols-2 max-w-2xl mx-auto">
           {propCategories.map((category) => (
             <button
               key={category.id}
               onClick={() => setActiveId(category.id)}
-              className={`rounded-xl px-5 py-4 text-sm font-black tracking-wide transition ${
+              className={`flex items-center justify-center gap-2 rounded-xl px-6 py-4 text-sm md:text-base font-black tracking-wide transition ${
                 activeId === category.id
-                  ? "bg-red-700 text-white shadow-lg"
+                  ? category.id === "imtihonli"
+                    ? "bg-gradient-to-r from-blue-700 to-cyan-600 text-white shadow-lg shadow-cyan-900/20"
+                    : "bg-gradient-to-r from-red-700 to-rose-600 text-white shadow-lg shadow-red-900/20"
                   : "text-slate-600 hover:bg-slate-100 hover:text-slate-950"
               }`}
             >
-              {category.label}
+              {category.id === "imtihonli" ? (
+                <Zap className="h-4 w-4 text-yellow-300" />
+              ) : (
+                <Crown className="h-4 w-4 text-yellow-300" />
+              )}
+              <span>{category.label}</span>
             </button>
           ))}
         </Reveal>
 
-        {/* Accounts Table / Cards */}
+        {/* Accounts Container */}
         <Reveal delay={170} className="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.08)]">
-          <div key={`header-${active.id}`} className="tab-panel-enter grid gap-6 border-b border-slate-200 bg-gradient-to-br from-red-50 via-white to-white p-6 md:grid-cols-[1fr_1.4fr] md:p-8">
+          
+          {/* Header Card with Rules and 100% Guarantee */}
+          <div
+            key={`header-${active.id}`}
+            className={`tab-panel-enter grid gap-6 border-b border-slate-200 p-6 md:grid-cols-[1.2fr_1fr] md:p-8 ${
+              active.id === "imtihonli"
+                ? "bg-gradient-to-br from-blue-50/80 via-white to-cyan-50/40"
+                : "bg-gradient-to-br from-red-50/80 via-white to-rose-50/40"
+            }`}
+          >
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-red-700">{active.label}</p>
-              <h3 className="mt-3 text-2xl font-black text-slate-950 md:text-3xl">{active.title}</h3>
-              <p className="mt-3 max-w-xl leading-7 text-slate-600">{active.description}</p>
+              <div className="flex flex-wrap items-center gap-3">
+                <span
+                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-black uppercase tracking-wider ${
+                    active.id === "imtihonli"
+                      ? "bg-blue-100 text-blue-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
+                  <Sparkles className="h-3.5 w-3.5" />
+                  {active.label}
+                </span>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    setPreviewPoster(
+                      active.id === "imtihonli"
+                        ? "/images/imtihonli-prop.jpg"
+                        : "/images/real-imtihonsiz.jpg"
+                    )
+                  }
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-red-700 underline"
+                >
+                  <Eye className="h-3.5 w-3.5" />
+                  Rasmiy plakatni ko‘rish
+                </button>
+              </div>
+
+              <h3 className="mt-3 text-2xl font-black text-slate-950 md:text-3xl">
+                {active.title}
+              </h3>
+              <p className="mt-2 text-sm md:text-base font-bold text-slate-700">
+                {active.tagline}
+              </p>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
+                {active.description}
+              </p>
             </div>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {active.rules.map((rule) => (
-                <div key={rule} className="rounded-2xl border border-red-100 bg-white p-4 shadow-sm">
-                  <ShieldCheck className="h-5 w-5 text-red-700" />
-                  <p className="mt-3 text-sm font-bold leading-6 text-slate-700">{rule}</p>
+
+            {/* 100% Kafolat Card & Key Points */}
+            <div className="flex flex-col justify-between gap-4">
+              <div className="flex items-center gap-3 rounded-2xl border-2 border-amber-300 bg-gradient-to-r from-amber-50 to-yellow-50 p-4 shadow-sm">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-500 to-amber-600 text-white shadow-md">
+                  <Crown className="h-6 w-6" />
                 </div>
-              ))}
+                <div>
+                  <div className="text-xs font-black tracking-wider text-amber-900 uppercase">
+                    XF JAMOASI
+                  </div>
+                  <div className="text-base font-black text-slate-950">
+                    100% KAFOLAT BERADI
+                  </div>
+                  <div className="text-xs text-slate-600">
+                    Bigger Capital, Bigger Opportunities
+                  </div>
+                </div>
+              </div>
+
+              {/* Rules List */}
+              <div className="grid gap-2 sm:grid-cols-2">
+                {active.rules.map((rule, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white p-2.5 text-xs font-bold text-slate-700 shadow-sm"
+                  >
+                    <ShieldCheck className="h-4 w-4 shrink-0 text-red-600" />
+                    <span>{rule}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div key={active.id} className="tab-panel-enter bg-slate-50/60 p-4 sm:p-6 lg:p-7">
-            <div className="grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Accounts Grid */}
+          <div key={active.id} className="tab-panel-enter bg-slate-50/60 p-4 sm:p-6 lg:p-8">
+            <div
+              className={`grid gap-5 ${
+                active.accounts.length === 5
+                  ? "sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+                  : "sm:grid-cols-2 lg:grid-cols-4"
+              }`}
+            >
               {active.accounts.map((account) => (
                 <article
                   key={`${active.id}-${account.amount}`}
-                  className={`relative flex min-h-[300px] flex-col rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                  className={`relative flex min-h-[380px] flex-col justify-between rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl ${
                     account.featured
-                      ? "border-2 border-red-600 bg-gradient-to-b from-red-50/70 to-white shadow-md ring-2 ring-red-600/10"
+                      ? active.id === "imtihonli"
+                        ? "border-2 border-cyan-500 bg-gradient-to-b from-cyan-50/60 via-white to-white shadow-md ring-2 ring-cyan-500/10"
+                        : "border-2 border-red-600 bg-gradient-to-b from-red-50/60 via-white to-white shadow-md ring-2 ring-red-600/10"
                       : "border border-slate-200 bg-white shadow-sm hover:border-slate-300"
                   }`}
                 >
-                  {account.featured && (
-                    <span className="absolute right-4 top-4 rounded-full bg-red-700 px-2.5 py-1 text-[9px] font-black uppercase tracking-widest text-white shadow-sm">
-                      Tavsiya
+                  {account.badge && (
+                    <span
+                      className={`absolute right-4 top-4 rounded-full px-2.5 py-1 text-[9px] font-black uppercase tracking-widest text-white shadow-sm ${
+                        active.id === "imtihonli" ? "bg-cyan-600" : "bg-red-700"
+                      }`}
+                    >
+                      {account.badge}
                     </span>
                   )}
-                  <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Savdo kapitali</p>
-                  <h4 className="mt-2 text-3xl font-black text-slate-950">{account.amount}</h4>
-                  <div className="mt-5 space-y-2 text-sm text-slate-600">
-                    <p className="flex items-start gap-2">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-red-600" />
-                      {active.rules[0]}
+
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
+                      Savdo kapitali
                     </p>
-                    {account.dailyRange && (
-                      <p className="flex items-start gap-2">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-red-600" />
-                        Kunlik tavsiya: {account.dailyRange}
-                      </p>
-                    )}
+                    <h4 className="mt-2 text-3xl font-black text-slate-950">
+                      {account.amount}
+                    </h4>
+
+                    {/* Parameters from flyers */}
+                    <div className="mt-4 space-y-2 rounded-xl bg-slate-50 p-3 border border-slate-200 text-xs">
+                      {account.targetProfit && (
+                        <div className="flex items-center justify-between">
+                          <span className="text-slate-500 flex items-center gap-1">
+                            <Target className="h-3.5 w-3.5 text-cyan-600" />
+                            Target (9%):
+                          </span>
+                          <strong className="font-black text-amber-700">
+                            {account.targetProfit}
+                          </strong>
+                        </div>
+                      )}
+
+                      <div className="flex items-center justify-between">
+                        <span className="text-slate-500 flex items-center gap-1">
+                          <AlertTriangle className="h-3.5 w-3.5 text-red-600" />
+                          Kunlik minus:
+                        </span>
+                        <strong className="font-bold text-slate-800">
+                          {account.dailyLoss}
+                        </strong>
+                      </div>
+
+                      <div className="flex items-center justify-between">
+                        <span className="text-slate-500 flex items-center gap-1">
+                          <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+                          Umumiy minus:
+                        </span>
+                        <strong className="font-bold text-slate-800">
+                          {account.totalLoss}
+                        </strong>
+                      </div>
+
+                      {account.payoutNote && (
+                        <div className="flex items-center justify-between pt-1 border-t border-slate-200 text-[11px] text-emerald-700">
+                          <span className="flex items-center gap-1">
+                            <RefreshCw className="h-3 w-3" />
+                            To‘lov tartibi:
+                          </span>
+                          <span className="font-semibold">{account.payoutNote}</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <div className="mt-auto pt-6">
-                    <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Hisob narxi</p>
-                    <p className="mt-1 text-xl font-black text-slate-950">{formatPrice(account.price)}</p>
+
+                  <div className="mt-6 pt-4 border-t border-slate-100">
+                    <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
+                      {active.id === "imtihonli" ? "Prop narxi" : "Hisob narxi"}
+                    </p>
+                    <p
+                      className={`mt-1 text-xl font-black ${
+                        active.id === "imtihonli" ? "text-cyan-700" : "text-red-700"
+                      }`}
+                    >
+                      {formatPrice(account.price)}
+                    </p>
                     <button
                       onClick={() =>
                         setProduct({
@@ -144,7 +302,11 @@ export default function PropAccountsSection() {
                           serviceFee: 200_000,
                         })
                       }
-                      className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-red-700 px-4 py-3 text-sm font-black text-white shadow-md shadow-red-700/20 transition hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-lg"
+                      className={`mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-black text-white shadow-md transition hover:-translate-y-0.5 hover:shadow-lg ${
+                        active.id === "imtihonli"
+                          ? "bg-gradient-to-r from-blue-700 to-cyan-600 hover:from-blue-600 hover:to-cyan-500 shadow-cyan-900/20"
+                          : "bg-gradient-to-r from-red-700 to-rose-600 hover:from-red-600 hover:to-rose-500 shadow-red-900/20"
+                      }`}
                     >
                       Sotib olish
                       <ArrowRight className="h-4 w-4" />
@@ -152,6 +314,66 @@ export default function PropAccountsSection() {
                   </div>
                 </article>
               ))}
+            </div>
+
+            {/* Comparison Table View */}
+            <div className="mt-8 overflow-x-auto rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="text-sm font-black text-slate-900 flex items-center gap-2">
+                  <FileText className="h-4 w-4 text-red-600" />
+                  {active.label} — Taqqoslash jadvali
+                </h4>
+                <span className="text-xs text-slate-500 font-mono">xorazmforex.uz</span>
+              </div>
+              <table className="w-full text-left text-xs sm:text-sm text-slate-700">
+                <thead className="bg-slate-100 text-[11px] uppercase font-black text-slate-700 border-b border-slate-200">
+                  <tr>
+                    <th className="py-2.5 px-3">Hisob miqdori</th>
+                    <th className="py-2.5 px-3">Narxi</th>
+                    {active.id === "imtihonli" && (
+                      <th className="py-2.5 px-3">Realga o‘tish (9%)</th>
+                    )}
+                    <th className="py-2.5 px-3">Kunlik minus</th>
+                    <th className="py-2.5 px-3">Umumiy minus</th>
+                    <th className="py-2.5 px-3 text-center">Amal</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {active.accounts.map((acc, i) => (
+                    <tr key={i} className="hover:bg-slate-50 transition-colors">
+                      <td className="py-3 px-3 font-black text-slate-950 text-sm">
+                        {acc.amount}
+                      </td>
+                      <td className="py-3 px-3 font-bold text-red-700">
+                        {formatPrice(acc.price)}
+                      </td>
+                      {active.id === "imtihonli" && (
+                        <td className="py-3 px-3 font-bold text-amber-700">
+                          {acc.targetProfit}
+                        </td>
+                      )}
+                      <td className="py-3 px-3 text-slate-600">{acc.dailyLoss}</td>
+                      <td className="py-3 px-3 text-slate-600">{acc.totalLoss}</td>
+                      <td className="py-3 px-3 text-center">
+                        <button
+                          onClick={() =>
+                            setProduct({
+                              kind: "prop",
+                              title: `${active.label} — ${acc.amount}`,
+                              subtitle: active.title,
+                              price: acc.price,
+                              serviceFee: 200_000,
+                            })
+                          }
+                          className="rounded-lg bg-slate-900 px-3 py-1.5 text-xs font-bold text-white hover:bg-red-700 transition"
+                        >
+                          Tanlash
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </Reveal>
@@ -163,10 +385,39 @@ export default function PropAccountsSection() {
             <span>Onlayn — 200 000 so‘m • Markazda — 300 000 so‘m</span>
           </div>
           <div className="text-xs text-red-900 font-bold">
-            Menedjer aloqasi: <a href={`tel:${siteContacts.propManagerPhone.raw}`} className="underline">{siteContacts.propManagerPhone.number}</a>
+            Menedjer aloqasi: <a href={`tel:${siteContacts.propManagerPhone.raw}`} className="underline">{siteContacts.propManagerPhone.number}</a> | Telegram: <a href={siteContacts.telegramAdmin} target="_blank" rel="noreferrer" className="underline">@xfprop</a>
           </div>
         </Reveal>
       </div>
+
+      {/* Poster Lightbox Modal */}
+      {previewPoster && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-md"
+          onClick={() => setPreviewPoster(null)}
+        >
+          <div
+            className="relative max-w-3xl w-full overflow-hidden rounded-2xl border border-slate-700 bg-slate-950 p-2 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setPreviewPoster(null)}
+              className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/80 text-white transition hover:bg-black border border-slate-600"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="relative h-[75vh] w-full">
+              <Image
+                src={previewPoster}
+                alt="Rasmiy Tarif Plakati"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <OrderModal product={product} onClose={() => setProduct(null)} />
     </section>

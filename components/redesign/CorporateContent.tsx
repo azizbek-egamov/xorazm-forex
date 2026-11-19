@@ -259,7 +259,8 @@ export function RiskAndFaqSection() {
   const faqs = [
     ["Kurslar kimlar uchun?", "Dasturlar mutlaqo yangi boshlovchilardan tajribali treyderlargacha moslashtirilgan. START va onlayn guruh mutlaqo 0 dan boshlanadi."],
     ["Onlayn darslar jonlimi?", "Ha. Onlayn guruh Telegram orqali jonli LIVE tarzida o‘tiladi, individual formatda esa Sardorbek Vaisov bilan 25–30 ta yakkama-yakka jonli dars olib boriladi."],
-    ["Prop hisob nima va qanday ishlaydi?", "Prop hisob — belgilangan risk qoidalariga amal qilgan holda katta savdo kapitalidan foydalanish imkonini beruvchi hisob. Muvaffaqiyatli savdodan 80% gacha sof foyda sizga to‘lanadi."],
+    ["Prop hisob nima va qanday ishlaydi?", "Prop hisob — belgilangan risk qoidalariga amal qilgan holda katta savdo kapitalidan foydalanish imkonini beruvchi hisob. Muvaffaqiyatli savdodan sof foyda sizga to‘lanadi."],
+    ["Prop hisob turlari va qoidalari qanday?", "Bizda 2 xil rasmiy hisob mavjud: 1) IMTIHONLI — 9% foyda qilingach to‘lov 100% qaytariladi va 14 kundan keyin pul yechiladi; 2) REAL IMTIHONSIZ — darhol real hisob, birinchi yechish 21 kundan keyin va keyingilari har 14 kunda cheklanmagan payoutlar bilan."],
     ["Prop hisobni qancha vaqtda rasmiylashtiramiz?", "Prop hisoblar va konsultatsiya arizasi qabul qilingach, 15–20 daqiqa ichida prop menejerimiz tomonidan to‘liq rasmiylashtirib beriladi."],
     ["To‘lov usullari qanday?", "To‘lovlarni sayt orqali onlayn (UzCard, Visa karta chekini yuklash orqali) yoki Urganch shahridagi markazimizga tashrif buyurib naqd amalga oshirishingiz mumkin."],
     ["Daromad kafolatlanadimi?", "Yo‘q. Treyding yuqori moliyaviy risk bilan bog‘liq bo‘lib, natija bilim, qat’iy intizom, bozor holati va risk menejment qoidalariga amal qilishga bog‘liq."],

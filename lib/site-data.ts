@@ -14,13 +14,20 @@ export type PropAccount = {
   amount: string
   price: number
   featured?: boolean
+  targetProfit?: string
+  targetPercent?: string
+  dailyLoss?: string
+  totalLoss?: string
+  payoutNote?: string
   dailyRange?: string
+  badge?: string
 }
 
 export type PropCategory = {
-  id: "premium" | "challenge" | "lite"
+  id: "imtihonli" | "imtihonsiz"
   label: string
   title: string
+  tagline: string
   description: string
   rules: string[]
   accounts: PropAccount[]
@@ -107,51 +114,117 @@ export const courses: Course[] = [
 
 export const propCategories: PropCategory[] = [
   {
-    id: "premium",
-    label: "REAL PREMIUM",
-    title: "Imtihonsiz tayyor real hisoblar",
-    description: "Darhol savdoni boshlash uchun tayyor hisob. Foyda targeti mavjud emas.",
-    rules: ["Maksimal umumiy zarar: 8%", "Pul yechish: 14 kundan keyin", "Foydadan ulush: 80% gacha"],
+    id: "imtihonli",
+    label: "IMTIHONLI PROP",
+    title: "IMTIHONli PROP hisoblar",
+    tagline: "O‘Z MAHORATINGIZNI KOMPANIYA PULLARIDA KO‘RSATING VA DAROMAD OLING!",
+    description: "Kompaniya mablag‘ida savdo qiling. 9% profit bajargach real hisobga o‘tasiz va birinchi payoutda to‘lov to‘liq qaytariladi!",
+    rules: [
+      "Target (9%): Imtihondan o‘tish uchun 9% daromad",
+      "100% Refund: Birinchi payoutda prop puli qaytariladi",
+      "Pul yechish: Real hisobda 14 kundan keyin",
+      "Kunlik zarar: 4% max | Umumiy zarar: 6% max",
+    ],
     accounts: [
-      { amount: "$1 000", price: 1_000_000 },
-      { amount: "$2 500", price: 1_500_000 },
-      { amount: "$5 000", price: 3_000_000 },
-      { amount: "$10 000", price: 5_500_000, featured: true },
-      { amount: "$25 000", price: 10_500_000, featured: true },
-      { amount: "$50 000", price: 20_000_000 },
-      { amount: "$75 000", price: 30_000_000 },
-      { amount: "$100 000", price: 45_000_000 },
+      {
+        amount: "$12 500",
+        price: 1_300_000,
+        targetProfit: "$1 125",
+        targetPercent: "9%",
+        dailyLoss: "4% ($500)",
+        totalLoss: "6% ($750)",
+        payoutNote: "14 kunda / to‘lov qaytadi",
+      },
+      {
+        amount: "$25 000",
+        price: 2_500_000,
+        targetProfit: "$2 250",
+        targetPercent: "9%",
+        dailyLoss: "4% ($1 000)",
+        totalLoss: "6% ($1 500)",
+        featured: true,
+        badge: "Ommabop",
+        payoutNote: "14 kunda / to‘lov qaytadi",
+      },
+      {
+        amount: "$50 000",
+        price: 4_800_000,
+        targetProfit: "$4 500",
+        targetPercent: "9%",
+        dailyLoss: "4% ($2 000)",
+        totalLoss: "6% ($3 000)",
+        featured: true,
+        badge: "Tavsiya",
+        payoutNote: "14 kunda / to‘lov qaytadi",
+      },
+      {
+        amount: "$100 000",
+        price: 8_200_000,
+        targetProfit: "$9 000",
+        targetPercent: "9%",
+        dailyLoss: "4% ($4 000)",
+        totalLoss: "6% ($6 000)",
+        payoutNote: "14 kunda / to‘lov qaytadi",
+      },
+      {
+        amount: "$200 000",
+        price: 14_000_000,
+        targetProfit: "$18 000",
+        targetPercent: "9%",
+        dailyLoss: "4% ($8 000)",
+        totalLoss: "6% ($12 000)",
+        badge: "VIP Kapital",
+        payoutNote: "14 kunda / to‘lov qaytadi",
+      },
     ],
   },
   {
-    id: "challenge",
-    label: "IMTIHONLI",
-    title: "Imtihon orqali katta kapital",
-    description: "Belgilangan target va risk qoidalarini bajarib real prop hisobga o‘ting.",
-    rules: ["Kunlik maksimal zarar: 3%", "Umumiy maksimal zarar: 6%", "Foyda targeti: 10%"],
-    accounts: [
-      { amount: "$5 000", price: 800_000 },
-      { amount: "$10 000", price: 1_300_000 },
-      { amount: "$15 000", price: 1_800_000 },
-      { amount: "$25 000", price: 2_600_000, featured: true },
-      { amount: "$50 000", price: 4_500_000, featured: true },
-      { amount: "$100 000", price: 7_300_000 },
-      { amount: "$200 000", price: 12_500_000 },
-      { amount: "$400 000", price: 35_000_000 },
+    id: "imtihonsiz",
+    label: "REAL IMTIHONSIZ",
+    title: "REAL IMTIHONsiz hisoblar",
+    tagline: "Darhol real hisob bilan savdo qiling va daromad oling!",
+    description: "Hech qanday imtihon va sinovlarsiz, xarid qilgan kuningizdan darhol real kapitalda savdoni boshlang!",
+    rules: [
+      "1-pul yechish: 21 kundan keyin",
+      "Keyingi yechishlar: Har 14 kunda muntazam",
+      "Imtihonsiz: To‘g‘ridan-to‘g‘ri real savdo",
+      "Cheklanmagan: Cheksiz payoutlar",
+      "Kunlik minus: 3% max | Umumiy minus: 6% max",
     ],
-  },
-  {
-    id: "lite",
-    label: "REAL LITE",
-    title: "Qulay narxdagi real hisoblar",
-    description: "Kichikroq kapitaldan boshlash va intizomli savdo uchun lite format.",
-    rules: ["Kunlik maksimal zarar: 3%", "Umumiy maksimal zarar: 4%", "Pul yechish: 10 kundan keyin"],
     accounts: [
-      { amount: "$2 500", price: 500_000, dailyRange: "$15–25" },
-      { amount: "$5 000", price: 800_000, dailyRange: "$25–50" },
-      { amount: "$10 000", price: 1_700_000, dailyRange: "$50–100", featured: true },
-      { amount: "$25 000", price: 3_000_000, dailyRange: "$100–250", featured: true },
-      { amount: "$50 000", price: 5_000_000, dailyRange: "$250–500" },
+      {
+        amount: "$10 000",
+        price: 4_400_000,
+        dailyLoss: "3% ($300)",
+        totalLoss: "6% ($600)",
+        payoutNote: "21 kun / har 14 kunda",
+      },
+      {
+        amount: "$25 000",
+        price: 9_000_000,
+        dailyLoss: "3% ($750)",
+        totalLoss: "6% ($1 500)",
+        featured: true,
+        badge: "Ommabop",
+        payoutNote: "21 kun / har 14 kunda",
+      },
+      {
+        amount: "$50 000",
+        price: 15_000_000,
+        dailyLoss: "3% ($1 500)",
+        totalLoss: "6% ($3 000)",
+        featured: true,
+        badge: "Tavsiya",
+        payoutNote: "21 kun / har 14 kunda",
+      },
+      {
+        amount: "$100 000",
+        price: 28_000_000,
+        dailyLoss: "3% ($3 000)",
+        totalLoss: "6% ($6 000)",
+        badge: "VIP Kapital",
+        payoutNote: "21 kun / har 14 kunda",
+      },
     ],
   },
 ]
@@ -171,7 +244,7 @@ export const siteContacts = {
     note: "Prop hisoblar va kapital masalalari",
   },
   telegramChannel: "https://t.me/thexorazmforex",
-  telegramAdmin: "https://t.me/iamvaisov",
+  telegramAdmin: "https://t.me/xfprop",
   instagram: "https://instagram.com/xorazmforex.uz",
   youtube: "https://youtube.com/@vaisovs",
   address: "Urganch shahri, A. Qodiriy ko‘chasi, 11-uy",
