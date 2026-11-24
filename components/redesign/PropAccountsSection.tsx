@@ -120,7 +120,6 @@ export default function PropAccountsSection() {
                 <ArrowRight className="h-3.5 w-3.5" />
               </a>
             </div>
-            </div>
           </div>
         </Reveal>
 
