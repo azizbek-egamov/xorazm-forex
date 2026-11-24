@@ -81,7 +81,7 @@ export default function PropAccountsSection() {
                   className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-sky-500 to-sky-600 px-6 py-4 font-black text-white shadow-lg shadow-sky-500/25 transition duration-300 hover:-translate-y-0.5 hover:from-sky-600 hover:to-sky-700"
                 >
                   <Bot className="h-5 w-5" />
-                  <span>AI Bot: @xorazmforexadminAI_bot</span>
+                  <span>Telegram bot</span>
                 </a>
                 <a
                   href={siteContacts.telegramAdmin}
@@ -103,10 +103,10 @@ export default function PropAccountsSection() {
                 </span>
                 <div>
                   <p className="text-xs sm:text-sm font-bold text-slate-900">
-                    <span className="text-red-700 font-black">Telegram AI Bot</span> barcha tariflar bo‘yicha ma’lumot beradi, hisoblarni sotadi va buyurtmangizni 24/7 qabul qiladi!
+                    <span className="text-red-700 font-black">Telegram bot</span> barcha tariflar bo‘yicha ma’lumot beradi, hisoblarni sotadi va buyurtmangizni 24/7 qabul qiladi!
                   </p>
                   <span className="text-[11px] text-slate-500">
-                    Kutishsiz, avtomatik narxlar kalkulyatori va ma’lumotlarni yozib olish: <strong className="text-sky-600">@xorazmforexadminAI_bot</strong>
+                    Kutishsiz, avtomatik narxlar kalkulyatori va hisob xaridi.
                   </span>
                 </div>
               </div>

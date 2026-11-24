@@ -110,7 +110,7 @@ export default function CorporateHeader() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-red-600"></span>
             </span>
             <Bot className="h-3.5 w-3.5 text-red-700" />
-            <span>AI Bot: Tariflar & Xarid</span>
+            <span>Telegram bot</span>
           </a>
 
           {/* Telegram Free Channel Pill */}
@@ -207,11 +207,10 @@ export default function CorporateHeader() {
               </span>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <strong className="block text-sm font-black text-red-700">TELEGRAM AI BOT</strong>
+                  <strong className="block text-sm font-black text-red-700">TELEGRAM BOT</strong>
                   <span className="rounded bg-red-700 px-1.5 py-0.2 text-[9px] font-black text-white">24/7 ONLINE</span>
                 </div>
                 <span className="text-xs text-slate-600 block">Tariflar ma’lumoti va hisoblar xaridi</span>
-                <span className="text-[10px] text-sky-600 font-mono font-bold">@xorazmforexadminAI_bot</span>
               </div>
             </div>
             <span className="rounded-xl bg-red-700 px-3 py-1.5 text-xs font-black text-white shadow-sm transition hover:bg-red-800">

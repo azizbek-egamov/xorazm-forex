@@ -35,13 +35,12 @@ export default function FloatingLeadBar() {
             </span>
             <div className="text-left">
               <div className="flex items-center gap-1.5">
-                <strong className="block text-xs font-black text-red-700">TELEGRAM AI BOT</strong>
+                <strong className="block text-xs font-black text-red-700">TELEGRAM BOT</strong>
                 <span className="rounded bg-red-700 px-1.5 py-0.2 text-[9px] font-black text-white">24/7 ONLINE</span>
               </div>
               <p className="text-[11px] text-slate-600 leading-tight mt-0.5">
-                Tariflar ma’lumoti, hisoblar xaridi va qabul
+                Tariflar ma’lumoti va hisoblar xaridi
               </p>
-              <span className="text-[10px] text-sky-600 font-bold font-mono">@xorazmforexadminAI_bot</span>
             </div>
           </a>
 
@@ -113,8 +112,7 @@ export default function FloatingLeadBar() {
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-red-600"></span>
           </span>
           <Bot className="h-4 w-4 text-red-700 group-hover:text-white transition group-hover:rotate-12" />
-          <span className="hidden sm:inline">AI BOT: TARIFLAR & XARID</span>
-          <span className="sm:hidden">AI BOT</span>
+          <span>Telegram bot</span>
         </a>
 
         {/* Free Lesson Direct Button */}

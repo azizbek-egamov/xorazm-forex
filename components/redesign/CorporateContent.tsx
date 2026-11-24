@@ -647,11 +647,10 @@ export function ContactSection() {
                     </span>
                     <div>
                       <div className="flex items-center gap-2">
-                        <strong className="block text-sm text-slate-950">Telegram AI Bot</strong>
+                        <strong className="block text-sm text-slate-950">Telegram bot</strong>
                         <span className="rounded-full bg-red-700 px-2 py-0.5 text-[9px] font-black text-white">24/7 ONLINE</span>
                       </div>
-                      <span className="text-xs text-slate-600 block">Tariflar ma’lumoti, hisoblar xaridi va tezkor qabul</span>
-                      <span className="text-[11px] text-sky-600 font-mono font-bold">@xorazmforexadminAI_bot</span>
+                      <span className="text-xs text-slate-600 block">Tariflar ma’lumoti va hisoblar xaridi</span>
                     </div>
                   </span>
                   <span className="text-xs font-bold text-red-700">Boshlash →</span>
@@ -870,7 +869,7 @@ export function Footer() {
               className="mt-3 flex items-center gap-2 rounded-xl border border-red-800 bg-red-900/60 px-3.5 py-2 text-xs font-bold text-amber-200 transition hover:bg-red-900"
             >
               <Bot className="h-3.5 w-3.5 text-amber-300" />
-              <span>AI Bot: @xorazmforexadminAI_bot</span>
+              <span>Telegram bot</span>
             </a>
             <a
               href={siteContacts.telegramChannel}
