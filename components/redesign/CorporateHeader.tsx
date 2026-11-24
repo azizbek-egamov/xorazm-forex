@@ -102,14 +102,14 @@ export default function CorporateHeader() {
             href={siteContacts.telegramAiBot}
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-2 rounded-xl border border-indigo-400/40 bg-gradient-to-r from-slate-950 via-indigo-950 to-blue-950 px-3 py-2.5 text-xs font-black text-cyan-300 shadow-sm transition hover:border-cyan-400 hover:text-white md:flex"
+            className="hidden items-center gap-2 rounded-xl border border-red-200 bg-red-50/80 px-3 py-2.5 text-xs font-black text-red-700 shadow-sm transition hover:bg-red-100 hover:border-red-300 md:flex"
             title="Telegram AI Bot: Tariflar va Hisob xaridi (@xorazmforexadminAI_bot)"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-300"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-red-600"></span>
             </span>
-            <Bot className="h-3.5 w-3.5 text-cyan-400" />
+            <Bot className="h-3.5 w-3.5 text-red-700" />
             <span>AI Bot: Tariflar & Xarid</span>
           </a>
 
@@ -199,22 +199,22 @@ export default function CorporateHeader() {
             href={siteContacts.telegramAiBot}
             target="_blank"
             rel="noreferrer"
-            className="mb-3 flex items-center justify-between rounded-2xl border border-indigo-500/40 bg-gradient-to-r from-slate-950 via-indigo-950 to-blue-950 p-4 text-white shadow-lg shadow-indigo-950/20"
+            className="mb-3 flex items-center justify-between rounded-2xl border border-red-200 bg-red-50/80 p-4 text-slate-900 shadow-sm"
           >
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 text-white">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-700 text-white shadow-md shadow-red-700/20">
                 <Bot className="h-5 w-5" />
               </span>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <strong className="block text-sm font-black text-cyan-300">TELEGRAM AI BOT</strong>
-                  <span className="rounded bg-cyan-400/20 px-1 py-0.2 text-[9px] font-bold text-cyan-200">24/7</span>
+                  <strong className="block text-sm font-black text-red-700">TELEGRAM AI BOT</strong>
+                  <span className="rounded bg-red-700 px-1.5 py-0.2 text-[9px] font-black text-white">24/7 ONLINE</span>
                 </div>
-                <span className="text-xs text-slate-300 block">Tariflar ma’lumoti va hisoblar xaridi</span>
-                <span className="text-[10px] text-cyan-400 font-mono">@xorazmforexadminAI_bot</span>
+                <span className="text-xs text-slate-600 block">Tariflar ma’lumoti va hisoblar xaridi</span>
+                <span className="text-[10px] text-sky-600 font-mono font-bold">@xorazmforexadminAI_bot</span>
               </div>
             </div>
-            <span className="rounded-lg bg-cyan-400 px-2.5 py-1 text-[11px] font-black text-slate-950">
+            <span className="rounded-xl bg-red-700 px-3 py-1.5 text-xs font-black text-white shadow-sm transition hover:bg-red-800">
               O‘tish →
             </span>
           </a>

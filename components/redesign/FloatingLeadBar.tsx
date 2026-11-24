@@ -28,20 +28,20 @@ export default function FloatingLeadBar() {
             href={siteContacts.telegramAiBot}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-950 p-3 text-white border border-indigo-500/30 transition hover:brightness-110 shadow-lg shadow-indigo-950/20"
+            className="flex items-center gap-3 rounded-2xl border-2 border-red-200 bg-red-50/70 p-3 text-slate-900 transition hover:bg-red-100/70 hover:border-red-300"
           >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 text-white shadow-md">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-700 text-white shadow-md shadow-red-700/20">
               <Bot className="h-5 w-5" />
             </span>
             <div className="text-left">
               <div className="flex items-center gap-1.5">
-                <strong className="block text-xs font-black text-cyan-300">TELEGRAM AI BOT</strong>
-                <span className="rounded bg-cyan-400/20 px-1 py-0.2 text-[9px] font-bold text-cyan-200">24/7</span>
+                <strong className="block text-xs font-black text-red-700">TELEGRAM AI BOT</strong>
+                <span className="rounded bg-red-700 px-1.5 py-0.2 text-[9px] font-black text-white">24/7 ONLINE</span>
               </div>
-              <p className="text-[11px] text-slate-200 leading-tight mt-0.5">
-                Tariflar ma’lumoti, hisoblar xaridi va tezkor qabul
+              <p className="text-[11px] text-slate-600 leading-tight mt-0.5">
+                Tariflar ma’lumoti, hisoblar xaridi va qabul
               </p>
-              <span className="text-[10px] text-cyan-400 font-mono font-bold">@xorazmforexadminAI_bot</span>
+              <span className="text-[10px] text-sky-600 font-bold font-mono">@xorazmforexadminAI_bot</span>
             </div>
           </a>
 
@@ -105,14 +105,14 @@ export default function FloatingLeadBar() {
           href={siteContacts.telegramAiBot}
           target="_blank"
           rel="noreferrer"
-          className="group flex items-center gap-2 rounded-full border-2 border-indigo-400/80 bg-gradient-to-r from-slate-900 via-indigo-900 to-blue-900 py-2.5 px-3.5 text-xs font-black text-white shadow-xl shadow-indigo-950/40 transition duration-300 hover:scale-105 hover:border-cyan-400"
+          className="group flex items-center gap-2 rounded-full border-2 border-red-600 bg-white py-2.5 px-3.5 text-xs font-black text-red-700 shadow-xl shadow-red-900/10 transition duration-300 hover:scale-105 hover:bg-red-700 hover:text-white"
           title="Telegram AI Bot: Tariflar va Hisob xaridi"
         >
           <span className="relative flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-300"></span>
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-red-600"></span>
           </span>
-          <Bot className="h-4 w-4 text-cyan-300 transition group-hover:rotate-12" />
+          <Bot className="h-4 w-4 text-red-700 group-hover:text-white transition group-hover:rotate-12" />
           <span className="hidden sm:inline">AI BOT: TARIFLAR & XARID</span>
           <span className="sm:hidden">AI BOT</span>
         </a>

@@ -639,22 +639,22 @@ export function ContactSection() {
                   href={siteContacts.telegramAiBot}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-between rounded-2xl border-2 border-indigo-500/40 bg-gradient-to-r from-slate-950 via-indigo-950 to-blue-950 p-4 font-bold text-white shadow-lg shadow-indigo-950/30 transition hover:brightness-110 hover:border-cyan-400"
+                  className="flex items-center justify-between rounded-2xl border border-red-200 bg-red-50/70 p-4 font-bold text-slate-900 transition hover:bg-red-100"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 text-white shadow-md">
-                      <Bot className="h-6 w-6" />
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-700 text-white shadow-md shadow-red-700/20">
+                      <Bot className="h-5 w-5" />
                     </span>
                     <div>
                       <div className="flex items-center gap-2">
-                        <strong className="block text-sm text-cyan-300">Rasmiy Telegram AI Bot</strong>
-                        <span className="rounded bg-cyan-400/20 px-1.5 py-0.5 text-[10px] font-black text-cyan-200">24/7 ONLINE</span>
+                        <strong className="block text-sm text-slate-950">Telegram AI Bot</strong>
+                        <span className="rounded-full bg-red-700 px-2 py-0.5 text-[9px] font-black text-white">24/7 ONLINE</span>
                       </div>
-                      <span className="text-xs text-slate-300 block">Tariflar, hisoblar xaridi va arizalarni qabul qilish</span>
-                      <span className="text-[11px] text-cyan-400 font-mono">@xorazmforexadminAI_bot</span>
+                      <span className="text-xs text-slate-600 block">Tariflar ma’lumoti, hisoblar xaridi va tezkor qabul</span>
+                      <span className="text-[11px] text-sky-600 font-mono font-bold">@xorazmforexadminAI_bot</span>
                     </div>
                   </span>
-                  <span className="rounded-xl bg-cyan-400 px-3 py-1.5 text-xs font-black text-slate-950">Boshlash →</span>
+                  <span className="text-xs font-bold text-red-700">Boshlash →</span>
                 </a>
 
                 <a
@@ -830,8 +830,8 @@ export function Footer() {
                 href={siteContacts.telegramAiBot}
                 target="_blank"
                 rel="noreferrer"
-                title="AI Bot: Tariflar va Xarid"
-                className="rounded-xl border border-cyan-400/50 bg-cyan-500/10 p-3 text-cyan-300 transition hover:-translate-y-0.5 hover:bg-cyan-400 hover:text-slate-950"
+                title="Telegram AI Bot (@xorazmforexadminAI_bot)"
+                className="rounded-xl border border-white/20 p-3 text-red-100 transition hover:-translate-y-0.5 hover:bg-white hover:text-red-900"
               >
                 <Bot className="h-5 w-5" />
               </a>
@@ -867,9 +867,9 @@ export function Footer() {
               href={siteContacts.telegramAiBot}
               target="_blank"
               rel="noreferrer"
-              className="mt-3 flex items-center gap-2 rounded-xl border border-cyan-400/30 bg-slate-900/80 px-3.5 py-2 text-xs font-bold text-cyan-300 transition hover:border-cyan-400 hover:bg-slate-900"
+              className="mt-3 flex items-center gap-2 rounded-xl border border-red-800 bg-red-900/60 px-3.5 py-2 text-xs font-bold text-amber-200 transition hover:bg-red-900"
             >
-              <Bot className="h-3.5 w-3.5 text-cyan-400" />
+              <Bot className="h-3.5 w-3.5 text-amber-300" />
               <span>AI Bot: @xorazmforexadminAI_bot</span>
             </a>
             <a
