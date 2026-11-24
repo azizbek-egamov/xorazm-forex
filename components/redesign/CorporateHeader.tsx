@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { ChevronDown, Gift, Instagram, Menu, Phone, Send, Sparkles, X } from "lucide-react"
+import { Bot, ChevronDown, Gift, Instagram, Menu, Phone, Send, Sparkles, X } from "lucide-react"
 import { siteContacts } from "@/lib/site-data"
 
 const links = [
@@ -97,6 +97,22 @@ export default function CorporateHeader() {
         </nav>
 
         <div className="flex items-center gap-2.5">
+          {/* Telegram AI Bot Pill */}
+          <a
+            href={siteContacts.telegramAiBot}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden items-center gap-2 rounded-xl border border-indigo-400/40 bg-gradient-to-r from-slate-950 via-indigo-950 to-blue-950 px-3 py-2.5 text-xs font-black text-cyan-300 shadow-sm transition hover:border-cyan-400 hover:text-white md:flex"
+            title="Telegram AI Bot: Tariflar va Hisob xaridi (@xorazmforexadminAI_bot)"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-300"></span>
+            </span>
+            <Bot className="h-3.5 w-3.5 text-cyan-400" />
+            <span>AI Bot: Tariflar & Xarid</span>
+          </a>
+
           {/* Telegram Free Channel Pill */}
           <a
             href={siteContacts.telegramChannel}
@@ -178,6 +194,31 @@ export default function CorporateHeader() {
       {/* Mobile Drawer */}
       {open && (
         <nav className="mobile-menu-enter max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-slate-200 bg-white px-4 py-5 shadow-2xl lg:hidden">
+          {/* Telegram AI Bot in Mobile */}
+          <a
+            href={siteContacts.telegramAiBot}
+            target="_blank"
+            rel="noreferrer"
+            className="mb-3 flex items-center justify-between rounded-2xl border border-indigo-500/40 bg-gradient-to-r from-slate-950 via-indigo-950 to-blue-950 p-4 text-white shadow-lg shadow-indigo-950/20"
+          >
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 text-white">
+                <Bot className="h-5 w-5" />
+              </span>
+              <div>
+                <div className="flex items-center gap-1.5">
+                  <strong className="block text-sm font-black text-cyan-300">TELEGRAM AI BOT</strong>
+                  <span className="rounded bg-cyan-400/20 px-1 py-0.2 text-[9px] font-bold text-cyan-200">24/7</span>
+                </div>
+                <span className="text-xs text-slate-300 block">Tariflar ma’lumoti va hisoblar xaridi</span>
+                <span className="text-[10px] text-cyan-400 font-mono">@xorazmforexadminAI_bot</span>
+              </div>
+            </div>
+            <span className="rounded-lg bg-cyan-400 px-2.5 py-1 text-[11px] font-black text-slate-950">
+              O‘tish →
+            </span>
+          </a>
+
           {/* Quick Lead-Magnet in Mobile */}
           <a
             href={siteContacts.telegramChannel}

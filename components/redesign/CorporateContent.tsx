@@ -5,6 +5,7 @@ import Image from "next/image"
 import {
   BarChart3,
   BookOpenCheck,
+  Bot,
   CheckCircle2,
   Clock3,
   Gift,
@@ -633,6 +634,29 @@ export function ContactSection() {
               </p>
 
               <div className="mt-5 space-y-3">
+                {/* Official Telegram AI Bot */}
+                <a
+                  href={siteContacts.telegramAiBot}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-between rounded-2xl border-2 border-indigo-500/40 bg-gradient-to-r from-slate-950 via-indigo-950 to-blue-950 p-4 font-bold text-white shadow-lg shadow-indigo-950/30 transition hover:brightness-110 hover:border-cyan-400"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 text-white shadow-md">
+                      <Bot className="h-6 w-6" />
+                    </span>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <strong className="block text-sm text-cyan-300">Rasmiy Telegram AI Bot</strong>
+                        <span className="rounded bg-cyan-400/20 px-1.5 py-0.5 text-[10px] font-black text-cyan-200">24/7 ONLINE</span>
+                      </div>
+                      <span className="text-xs text-slate-300 block">Tariflar, hisoblar xaridi va arizalarni qabul qilish</span>
+                      <span className="text-[11px] text-cyan-400 font-mono">@xorazmforexadminAI_bot</span>
+                    </div>
+                  </span>
+                  <span className="rounded-xl bg-cyan-400 px-3 py-1.5 text-xs font-black text-slate-950">Boshlash →</span>
+                </a>
+
                 <a
                   href={siteContacts.instagram}
                   target="_blank"
@@ -802,6 +826,16 @@ export function Footer() {
             <p className="mt-3 text-xs text-red-200/80">Bepul darslar va tahlillar:</p>
             <div className="mt-4 flex gap-3">
               <a
+                aria-label="Telegram AI Bot"
+                href={siteContacts.telegramAiBot}
+                target="_blank"
+                rel="noreferrer"
+                title="AI Bot: Tariflar va Xarid"
+                className="rounded-xl border border-cyan-400/50 bg-cyan-500/10 p-3 text-cyan-300 transition hover:-translate-y-0.5 hover:bg-cyan-400 hover:text-slate-950"
+              >
+                <Bot className="h-5 w-5" />
+              </a>
+              <a
                 aria-label="Instagram"
                 href={siteContacts.instagram}
                 target="_blank"
@@ -830,10 +864,19 @@ export function Footer() {
               </a>
             </div>
             <a
+              href={siteContacts.telegramAiBot}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 flex items-center gap-2 rounded-xl border border-cyan-400/30 bg-slate-900/80 px-3.5 py-2 text-xs font-bold text-cyan-300 transition hover:border-cyan-400 hover:bg-slate-900"
+            >
+              <Bot className="h-3.5 w-3.5 text-cyan-400" />
+              <span>AI Bot: @xorazmforexadminAI_bot</span>
+            </a>
+            <a
               href={siteContacts.telegramChannel}
               target="_blank"
               rel="noreferrer"
-              className="mt-5 inline-flex items-center gap-2 rounded-xl bg-red-800/80 px-4 py-2 text-xs font-bold text-amber-200 transition hover:bg-red-800"
+              className="mt-2 inline-flex items-center gap-2 rounded-xl bg-red-800/80 px-4 py-2 text-xs font-bold text-amber-200 transition hover:bg-red-800"
             >
               <Gift className="h-3.5 w-3.5" />
               <span>Telegramda bepul darslar</span>

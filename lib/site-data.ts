@@ -243,6 +243,8 @@ export const siteContacts = {
     label: "PROP MENEDJER",
     note: "Prop hisoblar va kapital masalalari",
   },
+  telegramAiBot: "https://t.me/xorazmforexadminAI_bot",
+  telegramAiBotUsername: "@xorazmforexadminAI_bot",
   telegramChannel: "https://t.me/thexorazmforex",
   telegramAdmin: "https://t.me/xfprop",
   instagram: "https://instagram.com/xorazmforex.uz",

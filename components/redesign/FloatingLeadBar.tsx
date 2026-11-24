@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Gift, Instagram, MessageCircle, Phone, Send, X } from "lucide-react"
+import { Bot, Gift, Instagram, MessageCircle, Phone, Send, Sparkles, X } from "lucide-react"
 import { siteContacts } from "@/lib/site-data"
 
 export default function FloatingLeadBar() {
@@ -11,9 +11,9 @@ export default function FloatingLeadBar() {
     <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2.5">
       {/* Expanded Quick Contacts Menu */}
       {expanded && (
-        <div className="mb-1 flex w-72 flex-col gap-2 rounded-3xl border border-slate-200 bg-white p-4 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-200">
+        <div className="mb-1 flex w-80 flex-col gap-2 rounded-3xl border border-slate-200 bg-white p-4 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-200">
           <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-            <span className="text-xs font-black uppercase tracking-wider text-red-700">Tezkor aloqa</span>
+            <span className="text-xs font-black uppercase tracking-wider text-red-700">Tezkor aloqa & AI</span>
             <button
               onClick={() => setExpanded(false)}
               className="rounded-full p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-600"
@@ -22,6 +22,28 @@ export default function FloatingLeadBar() {
               <X className="h-4 w-4" />
             </button>
           </div>
+
+          {/* Telegram AI Bot - Highlighted Card */}
+          <a
+            href={siteContacts.telegramAiBot}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-950 p-3 text-white border border-indigo-500/30 transition hover:brightness-110 shadow-lg shadow-indigo-950/20"
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 text-white shadow-md">
+              <Bot className="h-5 w-5" />
+            </span>
+            <div className="text-left">
+              <div className="flex items-center gap-1.5">
+                <strong className="block text-xs font-black text-cyan-300">TELEGRAM AI BOT</strong>
+                <span className="rounded bg-cyan-400/20 px-1 py-0.2 text-[9px] font-bold text-cyan-200">24/7</span>
+              </div>
+              <p className="text-[11px] text-slate-200 leading-tight mt-0.5">
+                Tariflar ma’lumoti, hisoblar xaridi va tezkor qabul
+              </p>
+              <span className="text-[10px] text-cyan-400 font-mono font-bold">@xorazmforexadminAI_bot</span>
+            </div>
+          </a>
 
           {/* Telegram Free Courses */}
           <a
@@ -78,12 +100,29 @@ export default function FloatingLeadBar() {
 
       {/* Main Floating Trigger Buttons */}
       <div className="flex items-center gap-2">
+        {/* Telegram AI Bot Floating Direct Button */}
+        <a
+          href={siteContacts.telegramAiBot}
+          target="_blank"
+          rel="noreferrer"
+          className="group flex items-center gap-2 rounded-full border-2 border-indigo-400/80 bg-gradient-to-r from-slate-900 via-indigo-900 to-blue-900 py-2.5 px-3.5 text-xs font-black text-white shadow-xl shadow-indigo-950/40 transition duration-300 hover:scale-105 hover:border-cyan-400"
+          title="Telegram AI Bot: Tariflar va Hisob xaridi"
+        >
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-300"></span>
+          </span>
+          <Bot className="h-4 w-4 text-cyan-300 transition group-hover:rotate-12" />
+          <span className="hidden sm:inline">AI BOT: TARIFLAR & XARID</span>
+          <span className="sm:hidden">AI BOT</span>
+        </a>
+
         {/* Free Lesson Direct Button */}
         <a
           href={siteContacts.telegramChannel}
           target="_blank"
           rel="noreferrer"
-          className="group hidden items-center gap-2.5 rounded-full border-2 border-sky-400 bg-gradient-to-r from-sky-500 to-sky-600 py-2.5 pl-3.5 pr-4 text-xs font-black text-white shadow-xl shadow-sky-500/30 transition duration-300 hover:scale-105 sm:inline-flex"
+          className="group hidden items-center gap-2.5 rounded-full border-2 border-sky-400 bg-gradient-to-r from-sky-500 to-sky-600 py-2.5 pl-3.5 pr-4 text-xs font-black text-white shadow-xl shadow-sky-500/30 transition duration-300 hover:scale-105 md:inline-flex"
         >
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
@@ -98,6 +137,17 @@ export default function FloatingLeadBar() {
           onClick={() => setExpanded(!expanded)}
           className="relative flex h-14 w-14 items-center justify-center rounded-full bg-red-700 text-white shadow-2xl shadow-red-700/40 transition duration-300 hover:scale-110 hover:bg-red-800"
           aria-label="Tezkor aloqa"
+        >
+          <span className="absolute -top-1 -right-1 flex h-4 w-4">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
+            <span className="relative inline-flex h-4 w-4 rounded-full bg-amber-400 text-[9px] font-black text-slate-950 items-center justify-center">!</span>
+          </span>
+          {expanded ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+        </button>
+      </div>
+    </div>
+  )
+}
         >
           <span className="absolute -top-1 -right-1 flex h-4 w-4">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>

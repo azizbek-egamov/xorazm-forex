@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import {
   ArrowRight,
+  Bot,
   CheckCircle2,
   Phone,
   Send,
@@ -74,15 +75,51 @@ export default function PropAccountsSection() {
                   <span>{siteContacts.propManagerPhone.number}</span>
                 </a>
                 <a
+                  href={siteContacts.telegramAiBot}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-slate-900 to-indigo-950 px-6 py-4 font-black text-cyan-300 border border-cyan-500/40 shadow-lg shadow-indigo-950/25 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-400 hover:text-white"
+                >
+                  <Bot className="h-5 w-5 text-cyan-400 animate-pulse" />
+                  <span>AI Bot: @xorazmforexadminAI_bot</span>
+                </a>
+                <a
                   href={siteContacts.telegramAdmin}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 rounded-2xl border-2 border-slate-300 bg-white px-5 py-4 font-bold text-slate-800 transition hover:border-slate-500 hover:bg-slate-50"
                 >
                   <Send className="h-4 w-4 text-sky-600" />
-                  <span>Telegram Admin: @xfprop</span>
+                  <span>Admin: @xfprop</span>
                 </a>
               </div>
+            </div>
+
+            {/* AI Assistant Info Ribbon */}
+            <div className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-indigo-200/80 bg-gradient-to-r from-indigo-900 via-slate-900 to-indigo-950 px-5 py-3.5 text-white">
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-400/20 text-cyan-300 border border-cyan-400/30">
+                  <Bot className="h-5 w-5" />
+                </span>
+                <div>
+                  <p className="text-xs sm:text-sm font-bold text-white">
+                    <span className="text-cyan-300 font-black">Telegram AI Bot</span> barcha tariflar bo‘yicha ma’lumot beradi, hisoblarni sotadi va buyurtmangizni 24/7 qabul qiladi!
+                  </p>
+                  <span className="text-[11px] text-slate-300">
+                    Kutishsiz, avtomatik narxlar kalkulyatori va ma’lumotlarni yozib olish.
+                  </span>
+                </div>
+              </div>
+              <a
+                href={siteContacts.telegramAiBot}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-cyan-400 px-4 py-2 text-xs font-black text-slate-950 transition hover:bg-cyan-300"
+              >
+                <span>Botga o‘tish</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
             </div>
           </div>
         </Reveal>
